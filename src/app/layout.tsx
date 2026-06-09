@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Poppins } from "next/font/google";
+import { Bodoni_Moda, Poppins } from "next/font/google";
 import "./globals.css";
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const bodoni = Bodoni_Moda({
+  variable: "--font-bodoni",
   subsets: ["latin"],
 });
 
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${poppins.variable} h-full antialiased scroll-smooth`}
+      className={`${bodoni.variable} ${poppins.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col font-poppins" suppressHydrationWarning>{children}</body>
     </html>

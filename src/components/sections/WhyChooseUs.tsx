@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
               <div className="w-16 h-16 bg-ivory rounded-full flex items-center justify-center mb-6">
                 {feature.icon}
               </div>
-              <h3 className="font-playfair text-xl font-bold mb-3">{feature.title}</h3>
+              <h3 className="font-bodoni text-xl font-bold mb-3">{feature.title}</h3>
               <p className="text-gray-600 text-sm">{feature.description}</p>
             </div>
           ))}

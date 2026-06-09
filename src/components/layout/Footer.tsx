@@ -1,10 +1,13 @@
+import Image from "next/image";
+import logo from "../../app/assets/logo.png";
+
 export default function Footer() {
   return (
     <footer className="bg-navy text-ivory py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="font-playfair text-2xl font-bold text-primary mb-4">MARA Singhe</h3>
+            <Image src={logo} alt="MARA Singhe Logo" height={140} className="object-contain mb-8" />
             <p className="text-sm opacity-80">Premium Incense Sticks crafted for elegance and peace.</p>
           </div>
           <div>

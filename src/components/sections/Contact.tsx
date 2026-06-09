@@ -4,7 +4,7 @@ export default function Contact() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           <div>
-            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-text-dark mb-6">Get in Touch</h2>
+            <h2 className="font-bodoni text-4xl md:text-5xl font-bold text-text-dark mb-6">Get in Touch</h2>
             <p className="text-gray-600 mb-12 text-lg">
               We would love to hear from you. For any inquiries regarding our premium incense collection, please reach out to us.
             </p>

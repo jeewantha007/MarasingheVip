@@ -1,19 +1,49 @@
+import Image from "next/image";
+import logo from "../../app/assets/logo.png";
+
 export default function Navbar() {
   return (
-    <header className="fixed w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex-shrink-0">
-            <span className="font-playfair text-2xl font-bold text-primary">MARA Singhe</span>
+    <div className="fixed w-full z-50 transition-all duration-300">
+      {/* Top Bar */}
+      <div className="bg-navy text-ivory py-2 px-4 text-sm hidden md:block">
+        <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex space-x-6">
+            <span className="flex items-center">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              +94 XX XXX XXXX
+            </span>
+            <span className="flex items-center">
+              <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              info@marasinghevip.lk
+            </span>
           </div>
-          <nav className="hidden md:flex space-x-8">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="#products" className="text-foreground hover:text-primary transition-colors">Products</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About Us</a>
-            <a href="#contact" className="text-foreground hover:text-primary transition-colors">Contact</a>
-          </nav>
+          <div>
+            <span>Island-wide Delivery Available</span>
+          </div>
         </div>
       </div>
-    </header>
+
+      {/* Main Navbar */}
+      <header className="w-full bg-white/95 backdrop-blur-md shadow-md border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20 relative">
+            {/* Break-out Circular Logo Area */}
+            <div className="absolute left-0 top-1 bg-white rounded-full p-2 shadow-md flex items-center justify-center w-28 h-28 z-50 transition-transform hover:scale-105">
+              <Image src={logo} alt="MARA Singhe Logo" height={86} className="object-contain" />
+            </div>
+            
+            {/* Spacer to prevent overlap with absolute logo */}
+            <div className="w-32 flex-shrink-0"></div>
+
+            <nav className="hidden md:flex space-x-10">
+              <a href="#home" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Home</a>
+              <a href="#products" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Products</a>
+              <a href="#about" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">About Us</a>
+              <a href="#contact" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Contact</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+    </div>
   );
 }
