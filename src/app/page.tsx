@@ -16,9 +16,9 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <Intro />
-
+  <AboutUs />
         <Products />
-        <AboutUs />
+      
         <WhyChooseUs />
         <Experience />
         <Contact />
@@ -28,3 +28,4 @@ export default function Home() {
     </>
   );
 }
+// Force Recompile
