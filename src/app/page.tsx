@@ -14,9 +14,9 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <AboutUs />
         <Products />
         <WhyChooseUs />
-        <AboutUs />
         <Experience />
         <Contact />
       </main>
