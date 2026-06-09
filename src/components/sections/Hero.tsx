@@ -58,72 +58,73 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col items-center mt-8 flex-1">
 
-        {/* TOP TITLES */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-2 flex items-center justify-center w-full"
-        >
-          <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary/50 mr-6"></div>
-          <h2 className="font-bodoni text-4xl md:text-6xl text-[#C4A052] font-normal tracking-[0.05em] uppercase drop-shadow-sm">
-            PREMIUM
-          </h2>
-          <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50 ml-6"></div>
-        </motion.div>
+        {/* TOP TITLES & TEXT */}
+        <div className="flex flex-col items-center z-10 w-full mt-4 md:mt-8">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex items-center justify-center w-full mb-3"
+          >
+            <div className="h-px w-8 bg-[#C4A052]/50 mr-4"></div>
+            <h2 className="font-bodoni text-xl md:text-3xl text-[#C4A052] font-normal tracking-[0.2em] uppercase">
+              INCENSE
+            </h2>
+            <div className="h-px w-8 bg-[#C4A052]/50 ml-4"></div>
+          </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mb-8 md:mb-12"
-        >
-          <h1 className="font-poppins text-3xl md:text-6xl font-bold text-[#1A1A1A] tracking-[0.25em] uppercase leading-none">
-            Fragrances
-          </h1>
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="mb-6"
+          >
+            <h1 className="font-poppins text-4xl md:text-6xl font-bold text-[#1A1A1A] tracking-[0.3em] uppercase leading-none">
+              FRAGRANCES
+            </h1>
+          </motion.div>
 
-        {/* IMAGE & OVERLAY CONTENT */}
-        <div className="relative w-full max-w-[1400px] flex flex-col items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="px-4 mb-4"
+          >
+            <p className="text-gray-500 text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-light tracking-wide text-center">
+              Explore the first chapter of the MARA Singhe journey, featuring premium aromatic products crafted with exceptional fragrances and uncompromising quality.
+            </p>
+          </motion.div>
+        </div>
 
-          {/* Main Image (Inline so it dictates the height) */}
+        {/* IMAGE & CTA BUTTON */}
+        <div className="relative w-full max-w-[1400px] flex flex-col items-center justify-center flex-1 mt-4 md:mt-8">
+          
+          {/* Main Hero Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 1 }}
-            className="w-full relative flex justify-center"
+            className="w-full relative flex justify-center items-center"
           >
             <Image
               src={heroImg}
               alt="MARA Singhe Product Range"
-              className="w-full max-w-[1200px] h-auto object-contain drop-shadow-2xl"
+              className="w-full max-w-[1200px] h-auto object-contain drop-shadow-xl"
               priority
             />
-          </motion.div>
 
-          {/* Overlay Text & Button (Absolutely positioned over the center of the image) */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pt-10 md:pt-20">
+            {/* Button Positioned perfectly in the middle of the image */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
             >
-              <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto mb-6 leading-relaxed font-light tracking-wide text-center">
-                Explore the first chapter of the MARA Singhe journey, featuring premium aromatic products crafted with exceptional fragrances and uncompromising quality.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <button className="px-10 py-4 bg-[#A38A70]/90 backdrop-blur-md text-white text-sm font-semibold tracking-[0.2em] uppercase hover:bg-[#8B735A] transition-all duration-300 flex items-center gap-3 shadow-[0_4px_20px_rgba(163,138,112,0.4)] hover:-translate-y-0.5 overflow-hidden group">
-                <span className="relative z-10">Discover More</span>
-                <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
+              <button className="px-12 py-4 bg-[#B58E62] text-white text-sm font-bold tracking-[0.15em] uppercase hover:bg-[#A37B53] transition-colors duration-300 shadow-sm hover:shadow-md whitespace-nowrap">
+                Discover More &rarr;
               </button>
             </motion.div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Carousel Pagination Dots */}
