@@ -7,13 +7,13 @@ import heroImg from "../../app/assets/hero.png";
 export default function Hero() {
   return (
     <section id="home" className="min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 relative overflow-hidden bg-light-bg text-center">
-      
+
 
 
       {/* Premium Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-white/40 to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px] pointer-events-none"></div>
-      
+
       {/* Flower Rain Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {Array.from({ length: 25 }).map((_, i) => {
@@ -21,7 +21,7 @@ export default function Hero() {
           const delay = (i * 1.3) % 15;
           const duration = 15 + (i % 5) * 3;
           const scale = 0.4 + (i % 4) * 0.15;
-          
+
           return (
             <motion.div
               key={i}
@@ -39,7 +39,7 @@ export default function Hero() {
               }}
             >
               {/* Elegant Petal shape */}
-              <div 
+              <div
                 className="w-5 h-5 bg-[#C4A052]/30 rounded-[50%] rounded-tr-sm backdrop-blur-sm shadow-sm"
                 style={{ transform: `scale(${scale}) rotate(45deg)` }}
               />
@@ -47,9 +47,9 @@ export default function Hero() {
           );
         })}
       </div>
-      
+
       {/* Decorative Gold Glow */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.5 }}
         transition={{ duration: 2 }}
@@ -57,9 +57,9 @@ export default function Hero() {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex flex-col items-center mt-8 flex-1">
-        
+
         {/* TOP TITLES */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -67,7 +67,7 @@ export default function Hero() {
         >
           <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary/50 mr-6"></div>
           <h2 className="font-bodoni text-4xl md:text-6xl text-[#C4A052] font-normal tracking-[0.05em] uppercase drop-shadow-sm">
-            Incense
+            PREMIUM
           </h2>
           <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary/50 ml-6"></div>
         </motion.div>
@@ -85,17 +85,17 @@ export default function Hero() {
 
         {/* IMAGE & OVERLAY CONTENT */}
         <div className="relative w-full max-w-[1400px] flex flex-col items-center justify-center">
-          
+
           {/* Main Image (Inline so it dictates the height) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 1 }}
             className="w-full relative flex justify-center"
           >
-            <Image 
-              src={heroImg} 
-              alt="MARA Singhe Product Range" 
+            <Image
+              src={heroImg}
+              alt="MARA Singhe Product Range"
               className="w-full max-w-[1200px] h-auto object-contain drop-shadow-2xl"
               priority
             />
@@ -109,7 +109,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto mb-6 leading-relaxed font-light tracking-wide text-center">
-                Explore our exquisite collection of pure fragrances,<br className="hidden md:block"/> meticulously crafted to elevate your incense experience.
+                Explore the first chapter of the MARA Singhe journey, featuring premium aromatic products crafted with exceptional fragrances and uncompromising quality.,<br className="hidden md:block" /> meticulously crafted to elevate your incense experience.
               </p>
             </motion.div>
 
@@ -119,7 +119,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.8 }}
             >
               <button className="px-10 py-4 bg-[#A38A70]/90 backdrop-blur-md text-white text-sm font-semibold tracking-[0.2em] uppercase hover:bg-[#8B735A] transition-all duration-300 flex items-center gap-3 shadow-[0_4px_20px_rgba(163,138,112,0.4)] hover:-translate-y-0.5 overflow-hidden group">
-                <span className="relative z-10">Discover More</span> 
+                <span className="relative z-10">Discover More</span>
                 <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">&rarr;</span>
               </button>
             </motion.div>
@@ -127,7 +127,7 @@ export default function Hero() {
         </div>
 
         {/* Carousel Pagination Dots */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}

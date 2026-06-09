@@ -46,33 +46,25 @@ export default function AboutUs() {
           {/* Text Content - Right Side */}
           <div className="w-full md:w-7/12 flex flex-col gap-5">
             <p className="text-gray-500 text-[15px] leading-[1.9] font-light">
-              Eden Fragrances operates as a distinguished brand under its mother company, ND Incense Products
-              (Pvt) Ltd, a well-established name in the incense industry for over two decades. Eden Fragrances has
-              built a strong reputation for reliability, expertise, and long-standing relationships within the
-              fragrance and incense sticks manufacturing sector.
+              MARA Singhe Premium Incense Sticks is a proudly Sri Lankan brand founded by M.M. Mahesh Marasinghe, driven by a vision to create premium-quality incense products that combine tradition, craftsmanship, and exceptional fragrance experiences.
             </p>
             <p className="text-gray-500 text-[15px] leading-[1.9] font-light">
-              For more than 20 years, we have been dedicated to sourcing and supplying essential incense
-              fragrances that form the backbone of incense stick manufacturing. Our commitment to quality and
-              consistency has made us the preferred supplier to Sri Lanka's leading incense stick manufacturers,
-              firmly establishing us as the top fragrance supplier in the industry.
+              As a growing business in the incense industry, MARA Singhe is dedicated to producing high-quality incense sticks that bring peace, positivity, and elegance into homes, religious spaces, and everyday life. Every product is carefully crafted using selected ingredients and refined fragrance blends to deliver a rich and long-lasting aromatic experience.
             </p>
             <p className="text-gray-500 text-[15px] leading-[1.9] font-light">
-              What sets Eden Fragrances apart is our unwavering focus on excellence and variety. We import and
-              distribute an extensive portfolio of approximately 150 exclusive incense fragrances, including some of
-              the rarest and most sought-after scents available in the market. These fragrances are supplied
-              exclusively by us, ensuring uniqueness, authenticity, and superior quality.
+              Our journey began with a simple commitment: to offer incense sticks that stand apart through quality, consistency, and attention to detail. From fragrance selection to product packaging, every aspect of MARA Singhe reflects our passion for excellence and our desire to create products that customers can trust.
             </p>
             <p className="text-gray-500 text-[15px] leading-[1.9] font-light">
-              Beyond the local market, Eden Fragrances is supported by established international partnerships
-              across South East Asia, enabling access to a diverse range of high-quality incense fragrances.
-              Essentially, the fragrances that are included in finished products are further exported to European
-              countries, reflecting the global standard and acceptance of our products.
+              The MARA Singhe collection currently features distinctive fragrances such as Nature Bliss (Jasmine Fragrance), Ocean Breeze (Blue Lotus Fragrance), and China Flower Fragrance, each designed to create a unique atmosphere of relaxation, spirituality, and wellbeing.
             </p>
             <p className="text-gray-500 text-[15px] leading-[1.9] font-light">
-              Today, Eden Fragrances proudly holds the position of Sri Lanka's leading incense fragrance brand,
-              built on decades of expertise, trusted partnerships, and a passion for creating scents that define
-              tradition, quality, and excellence.
+              At MARA Singhe, we believe that fragrance has the power to transform moments, elevate moods, and create meaningful experiences. Our mission is to become a trusted name in premium incense products by continuously delivering quality, innovation, and customer satisfaction.
+            </p>
+            <p className="text-gray-500 text-[15px] leading-[1.9] font-light">
+              As we continue to grow, we remain committed to preserving the timeless tradition of incense while introducing modern standards of quality and presentation that reflect the values of our brand.
+            </p>
+            <p className="text-[#C4A052] font-semibold text-[16px] leading-[1.9] italic mt-2">
+              MARA Singhe Premium Incense Sticks — Crafted for Fragrance, Inspired by Tradition.
             </p>
           </div>
 
