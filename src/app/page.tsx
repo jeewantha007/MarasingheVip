@@ -1,8 +1,9 @@
 import Navbar from "../components/layout/Navbar";
 import Hero from "../components/sections/Hero";
+import Intro from "../components/sections/Intro";
+import AboutUs from "../components/sections/AboutUs";
 import Products from "../components/sections/Products";
 import WhyChooseUs from "../components/sections/WhyChooseUs";
-import AboutUs from "../components/sections/AboutUs";
 import Experience from "../components/sections/Experience";
 import Contact from "../components/sections/Contact";
 import Footer from "../components/layout/Footer";
@@ -14,8 +15,10 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
-        <AboutUs />
+        <Intro />
+
         <Products />
+        <AboutUs />
         <WhyChooseUs />
         <Experience />
         <Contact />

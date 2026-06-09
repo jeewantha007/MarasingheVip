@@ -108,7 +108,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <p className="text-gray-800 text-sm md:text-lg max-w-2xl mx-auto mb-6 leading-relaxed font-light tracking-wide text-center drop-shadow-md bg-white/40 px-4 py-2 rounded-xl backdrop-blur-sm">
+              <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto mb-6 leading-relaxed font-light tracking-wide text-center">
                 Explore our exquisite collection of pure fragrances,<br className="hidden md:block"/> meticulously crafted to elevate your incense experience.
               </p>
             </motion.div>
