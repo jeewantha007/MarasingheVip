@@ -1,12 +1,30 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../../app/assets/logo.png";
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="fixed w-full z-50 transition-all duration-300">
-      {/* Top Bar */}
-      <div className="bg-navy text-ivory py-2 px-4 text-sm hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+      {/* Top Bar with smooth hide animation */}
+      <div 
+        className={`bg-navy text-ivory text-sm hidden md:block overflow-hidden transition-all duration-500 ease-in-out ${
+          isScrolled ? "max-h-0 opacity-0" : "max-h-16 opacity-100"
+        }`}
+      >
+        <div className="py-2 px-4 max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex space-x-6">
             <span className="flex items-center">
               <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>

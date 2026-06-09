@@ -9,6 +9,40 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-white/40 to-transparent pointer-events-none"></div>
       <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px] pointer-events-none"></div>
       
+      {/* Flower Rain Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {Array.from({ length: 25 }).map((_, i) => {
+          const left = `${(i * 17) % 100}%`;
+          const delay = (i * 1.3) % 15;
+          const duration = 15 + (i % 5) * 3;
+          const scale = 0.4 + (i % 4) * 0.15;
+          
+          return (
+            <motion.div
+              key={i}
+              className="absolute top-[-10%]"
+              style={{ left }}
+              animate={{
+                y: ["0vh", "120vh"],
+                x: ["0px", `${(i % 2 === 0 ? 60 : -60)}px`, "0px"],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                y: { duration, repeat: Infinity, ease: "linear", delay },
+                x: { duration: duration * 0.5, repeat: Infinity, ease: "easeInOut", repeatType: "mirror", delay },
+                rotate: { duration: duration * 0.8, repeat: Infinity, ease: "linear", delay },
+              }}
+            >
+              {/* Elegant Petal shape */}
+              <div 
+                className="w-5 h-5 bg-[#C4A052]/30 rounded-[50%] rounded-tr-sm backdrop-blur-sm shadow-sm"
+                style={{ transform: `scale(${scale}) rotate(45deg)` }}
+              />
+            </motion.div>
+          );
+        })}
+      </div>
+      
       {/* Decorative Gold Glow */}
       <motion.div 
         initial={{ opacity: 0 }}
