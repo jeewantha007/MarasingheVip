@@ -115,15 +115,24 @@ export default function Hero() {
 
             {/* Button Positioned perfectly in the middle of the image */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
+              animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+              className="absolute top-1/2 left-1/2 z-20"
             >
-              <button 
-                className="px-12 py-4 text-white text-sm font-bold tracking-[0.15em] uppercase transition-colors duration-300 shadow-sm hover:shadow-md whitespace-nowrap"
-                style={{ backgroundColor: '#B58E62' }}
-              >
+              <style>{`
+                .hero-discover-btn {
+                  background-color: #B58E62;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+                }
+                .hero-discover-btn:hover {
+                  background-color: #A37B53;
+                  transform: scale(1.05) translateY(-2px);
+                  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+                }
+              `}</style>
+              <button className="hero-discover-btn px-12 py-4 text-white text-sm font-bold tracking-[0.15em] uppercase shadow-lg whitespace-nowrap">
                 Discover More &rarr;
               </button>
             </motion.div>
