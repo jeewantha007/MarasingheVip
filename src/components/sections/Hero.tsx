@@ -120,7 +120,10 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 1.2 }}
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
             >
-              <button className="px-12 py-4 bg-red-600 text-white text-sm font-bold tracking-[0.15em] uppercase hover:bg-red-700 transition-colors duration-300 shadow-sm hover:shadow-md whitespace-nowrap">
+              <button 
+                className="px-12 py-4 text-white text-sm font-bold tracking-[0.15em] uppercase transition-colors duration-300 shadow-sm hover:shadow-md whitespace-nowrap"
+                style={{ backgroundColor: '#B58E62' }}
+              >
                 Discover More &rarr;
               </button>
             </motion.div>

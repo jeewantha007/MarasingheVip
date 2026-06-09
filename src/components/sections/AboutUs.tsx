@@ -3,8 +3,8 @@ import profileImg from "../../app/assets/profile.jpeg";
 
 export default function AboutUs() {
   return (
-    <section id="about" className="py-24 bg-[#FAFAFA] w-full">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+    <section id="about" className="py-24 w-full" style={{ backgroundColor: '#FAFAFA' }}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
 
         {/* Heading */}
         <h2 className="font-bodoni text-3xl md:text-[2.5rem] text-[#4A3B2C] uppercase tracking-[0.18em] mb-4 leading-snug text-center">
@@ -15,14 +15,14 @@ export default function AboutUs() {
         <div className="w-16 h-[2px] bg-[#8B5E3C] mb-14"></div>
 
         {/* Side-by-Side Layout */}
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-start w-full">
+        <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-14 items-start w-full" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap', justifyContent: 'center', gap: '3.5rem' }}>
 
           {/* Profile Image - Left Side, constrained height */}
-          <div className="w-full md:w-5/12 shrink-0 flex flex-col items-center md:items-end">
+          <div className="w-full md:w-5/12 shrink-0 flex flex-col items-center md:items-end" style={{ width: '40%', flexShrink: 0 }}>
             <Image
               src={profileImg}
               alt="M.M Mahesh Marasinghe"
-              className="w-full h-auto max-h-[520px] object-cover object-top shadow-md"
+              className="w-full aspect-[5/4] object-cover object-top shadow-md rounded-sm"
               priority
             />
             
@@ -44,7 +44,7 @@ export default function AboutUs() {
           </div>
 
           {/* Text Content - Right Side */}
-          <div className="w-full md:w-7/12 flex flex-col gap-5">
+          <div className="w-full md:w-7/12 flex flex-col gap-5" style={{ width: '55%' }}>
             <p className="text-gray-500 text-[15px] leading-[1.9] font-light">
               MARA Singhe Premium Incense Sticks is a proudly Sri Lankan brand founded by M.M. Mahesh Marasinghe, driven by a vision to create premium-quality incense products that combine tradition, craftsmanship, and exceptional fragrance experiences.
             </p>
