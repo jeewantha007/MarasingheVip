@@ -109,7 +109,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <p className="text-gray-500 text-sm md:text-lg max-w-2xl mx-auto mb-6 leading-relaxed font-light tracking-wide text-center">
-                Explore the first chapter of the MARA Singhe journey, featuring premium aromatic products crafted with exceptional fragrances and uncompromising quality.,<br className="hidden md:block" /> meticulously crafted to elevate your incense experience.
+                Explore the first chapter of the MARA Singhe journey, featuring premium aromatic products crafted with exceptional fragrances and uncompromising quality.
               </p>
             </motion.div>
 
