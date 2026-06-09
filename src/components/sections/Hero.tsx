@@ -6,7 +6,7 @@ import heroImg from "../../app/assets/hero.png";
 
 export default function Hero() {
   return (
-    <section id="home" className="min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 relative overflow-hidden bg-light-bg text-center">
+    <section id="home" className="min-h-[100dvh] flex flex-col items-center justify-center pt-32 pb-16 relative overflow-hidden bg-light-bg text-center" style={{ paddingTop: '5rem' }}>
 
 
 
@@ -79,7 +79,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mb-6"
           >
-            <h1 className="font-poppins text-4xl md:text-6xl font-bold text-[#1A1A1A] tracking-[0.3em] uppercase leading-none">
+            <h1 className="font-poppins text-3xl md:text-5xl font-bold text-[#1A1A1A] tracking-[0.3em] uppercase leading-none" style={{ fontSize: '3.2rem' }}>
               FRAGRANCES
             </h1>
           </motion.div>
@@ -102,14 +102,18 @@ export default function Hero() {
           {/* Main Hero Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 1 }}
+            animate={{ opacity: 1, scale: [1, 1.03, 1] }}
+            transition={{ 
+              opacity: { duration: 1, delay: 1 }, 
+              scale: { duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 } 
+            }}
             className="w-full relative flex justify-center items-center"
           >
             <Image
               src={heroImg}
               alt="MARA Singhe Product Range"
-              className="w-full max-w-[1200px] h-auto object-contain drop-shadow-xl"
+              className="w-full max-w-[1500px] h-auto object-contain drop-shadow-2xl"
+              style={{ maxHeight: '90vh' }}
               priority
             />
 
