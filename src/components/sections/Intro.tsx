@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Intro() {
   return (
-    <section className="py-24 bg-white text-center relative">
+    <section className="py-24 bg-white text-center relative" style={{ paddingTop: '2rem' }}>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
         
         {/* Golden Crown/Crest Icon Placeholder */}
