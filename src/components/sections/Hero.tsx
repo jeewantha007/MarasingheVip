@@ -68,7 +68,7 @@ export default function Hero() {
           >
             <div className="h-px w-8 bg-[#C4A052]/50 mr-4"></div>
             <h2 className="font-bodoni text-xl md:text-3xl text-[#C4A052] font-normal tracking-[0.2em] uppercase">
-              INCENSE
+              PREMIUM
             </h2>
             <div className="h-px w-8 bg-[#C4A052]/50 ml-4"></div>
           </motion.div>
