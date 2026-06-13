@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import heroImg from "../../app/assets/hero.png";
-// import heroImg2 from "../../app/assets/hero2.png";
-// import heroImg3 from "../../app/assets/hero3.png";
+import heroImg2 from "../../app/assets/hero2.png";
+import heroImg3 from "../../app/assets/hero3.png";
 
-const images = [heroImg];
+const images = [heroImg, heroImg2, heroImg3];
 
 export default function Hero() {
   const [active, setActive] = useState(0);
@@ -113,10 +113,13 @@ export default function Hero() {
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
-                initial={{ opacity: 0, scale: 0.97 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1.05 }}
+                exit={{ opacity: 0, scale: 1.1 }}
+                transition={{ 
+                  opacity: { duration: 0.8, ease: "easeInOut" },
+                  scale: { duration: 6, ease: "linear" } 
+                }}
                 className="col-start-1 row-start-1 w-full sm:w-11/12 md:w-10/12 flex justify-center items-center pb-8"
               >
                 <Image

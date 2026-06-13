@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import profileImg from "../../app/assets/profile.jpeg";
 
 export default function AboutUs() {
@@ -7,18 +10,36 @@ export default function AboutUs() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
 
         {/* Heading */}
-        <h2 className="font-bodoni text-3xl md:text-[2.5rem] text-navy uppercase tracking-[0.18em] mb-4 leading-snug text-center">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="font-bodoni text-3xl md:text-[2.5rem] text-navy uppercase tracking-[0.18em] mb-4 leading-snug text-center"
+        >
           About Us
-        </h2>
+        </motion.h2>
 
         {/* Decorative Line */}
-        <div className="w-16 h-[2px] bg-[#C4A052] mb-16 mx-auto"></div>
+        <motion.div 
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="w-16 h-[2px] bg-[#C4A052] mb-16 mx-auto"
+        ></motion.div>
 
         {/* Side-by-Side Layout */}
         <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-14 items-start w-full">
 
           {/* Profile Image - Left Side, constrained height */}
-          <div className="w-full md:w-5/12 shrink-0 flex flex-col items-center md:items-end">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="w-full md:w-5/12 shrink-0 flex flex-col items-center md:items-end"
+          >
             <div className="relative w-full group">
               <Image
                 src={profileImg}
@@ -43,10 +64,16 @@ export default function AboutUs() {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Text Content - Right Side */}
-          <div className="w-full md:w-7/12 flex flex-col gap-6 text-[15px] pl-0 md:pl-10 relative">
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            className="w-full md:w-7/12 flex flex-col gap-6 text-[15px] pl-0 md:pl-10 relative"
+          >
             {/* Large Decorative Quote */}
             <span className="absolute -top-10 -left-4 text-9xl text-[#C4A052]/10 font-bodoni leading-none pointer-events-none select-none">"</span>
             
@@ -77,7 +104,7 @@ export default function AboutUs() {
                 — MARA සිංහ Premium Fragrances
               </p>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 
