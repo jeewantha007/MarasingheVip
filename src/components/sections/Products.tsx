@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -77,6 +77,14 @@ const productsData: Product[] = [
 export default function Products() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [activeIndex, setActiveIndex] = useState(1); // Start with middle product active
+
+  useEffect(() => {
+    if (selectedProduct) return; // Stop auto-sliding if modal is open
+    const t = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % productsData.length);
+    }, 3000); // Auto-slide every 3 seconds
+    return () => clearInterval(t);
+  }, [selectedProduct]);
 
   const handleNext = () => {
     setActiveIndex((prev) => (prev + 1) % productsData.length);
