@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import bannerImg from "../../app/assets/banner.png";
 
 export default function Experience() {
   const scrollToProducts = () => {
@@ -8,15 +9,12 @@ export default function Experience() {
   };
 
   return (
-    <section className="relative py-16 sm:py-20 md:py-24 flex items-center justify-center overflow-hidden">
-      {/* 
-        Parallax Background Image 
-        To add a real image, replace bg-white above with: bg-[url('/your-image.jpg')] bg-cover bg-center bg-fixed
-      */}
-      <div className="absolute inset-0 bg-[#FAF7F0]"></div>
-      
-      {/* Subtle gold accent instead of multi-color gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FAF7F0] via-[#FAF7F0] to-[#C4A052]/20 bg-fixed"></div>
+    <section 
+      className="relative py-16 sm:py-20 md:py-24 flex items-center justify-center overflow-hidden bg-fixed bg-cover bg-center"
+      style={{ backgroundImage: `url(${bannerImg.src})` }}
+    >
+      {/* Subtle overlay to blend the image */}
+      <div className="absolute inset-0 bg-black/20"></div>
 
       {/* Decorative top/bottom ancient borders */}
       <div className="absolute top-0 left-0 w-full h-px bg-[#C4A052]/20"></div>

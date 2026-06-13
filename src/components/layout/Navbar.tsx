@@ -49,9 +49,9 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 relative">
             {/* Break-out Logo Crest */}
-            <div className="absolute left-0 top-0 bg-[#FAF7F0] rounded-b-[2rem] md:rounded-b-[3.5rem] border-b-[2px] border-x-[2px] border-[#C4A052]/40 shadow-[0_15px_30px_rgba(18,18,69,0.08)] flex items-center justify-center w-24 h-[6rem] md:w-32 md:h-[8.5rem] z-50 pt-2 transition-transform duration-500 hover:scale-105">
+            <a href="#home" className="absolute left-0 top-0 bg-[#FAF7F0] rounded-b-[2rem] md:rounded-b-[3.5rem] border-b-[2px] border-x-[2px] border-[#C4A052]/40 shadow-[0_15px_30px_rgba(18,18,69,0.08)] flex items-center justify-center w-24 h-[6rem] md:w-32 md:h-[8.5rem] z-50 pt-2 transition-transform duration-500 hover:scale-105 cursor-pointer">
               <Image src={logo} alt="MARA සිංහ Logo" height={95} priority style={{ width: "auto", maxHeight: "85%" }} className="object-contain" />
-            </div>
+            </a>
             
             {/* Spacer to prevent overlap with absolute logo */}
             <div className="w-20 md:w-32 flex-shrink-0"></div>
@@ -97,6 +97,26 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </header>
+
+      {/* Scroll to Top Button */}
+      <AnimatePresence>
+        {isScrolled && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.5, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 20 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="fixed bottom-[6.5rem] right-6 z-50 p-3 bg-[#C4A052] text-white rounded-full shadow-lg hover:bg-navy transition-colors cursor-pointer"
+            aria-label="Scroll to top"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            </svg>
+          </motion.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
