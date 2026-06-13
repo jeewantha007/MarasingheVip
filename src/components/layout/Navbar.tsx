@@ -49,19 +49,19 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 relative">
             {/* Break-out Logo Crest */}
-            <a href="#home" className="absolute left-0 top-0 bg-[#FAF7F0] rounded-b-[2rem] md:rounded-b-[3.5rem] border-b-[2px] border-x-[2px] border-[#C4A052]/40 shadow-[0_15px_30px_rgba(18,18,69,0.08)] flex items-center justify-center w-24 h-[6rem] md:w-32 md:h-[8.5rem] z-50 pt-2 transition-transform duration-500 hover:scale-105 cursor-pointer">
+            <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="absolute left-0 top-0 bg-[#FAF7F0] rounded-b-[2rem] md:rounded-b-[3.5rem] border-b-[2px] border-x-[2px] border-[#C4A052]/40 shadow-[0_15px_30px_rgba(18,18,69,0.08)] flex items-center justify-center w-24 h-[6rem] md:w-32 md:h-[8.5rem] z-50 pt-2 transition-transform duration-500 hover:scale-105 cursor-pointer">
               <Image src={logo} alt="MARA සිංහ Logo" height={95} priority style={{ width: "auto", maxHeight: "85%" }} className="object-contain" />
-            </a>
+            </button>
             
             {/* Spacer to prevent overlap with absolute logo */}
             <div className="w-20 md:w-32 flex-shrink-0"></div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-10">
-              <a href="#home" className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">Home</a>
-              <a href="#about" className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">About Us</a>
-              <a href="#products" className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">Products</a>
-              <a href="#contact" className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">Contact</a>
+              <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">Home</button>
+              <button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">About Us</button>
+              <button onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">Products</button>
+              <button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">Contact</button>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -88,10 +88,10 @@ export default function Navbar() {
               className="md:hidden absolute w-full bg-[#FAF7F0] shadow-lg border-t-2 border-[#C4A052]/30 overflow-hidden"
             >
               <nav className="flex flex-col space-y-6 px-8 py-6">
-                <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Home</a>
-                <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">About Us</a>
-                <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Products</a>
-                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Contact</a>
+                <button onClick={() => { setIsMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block text-left">Home</button>
+                <button onClick={() => { setIsMobileMenuOpen(false); document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' }); }} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block text-left">About Us</button>
+                <button onClick={() => { setIsMobileMenuOpen(false); document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' }); }} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block text-left">Products</button>
+                <button onClick={() => { setIsMobileMenuOpen(false); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block text-left">Contact</button>
               </nav>
             </motion.div>
           )}

@@ -1,8 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import oceanBreezeBlue from "../../app/assets/products/ocen-breeze-blue.png";
+import natureBliss from "../../app/assets/products/nature-bliss.png";
+import oceanBreezeRed from "../../app/assets/products/ocen-breeze-red.png";
 
 interface Product {
   id: string;
@@ -13,7 +17,7 @@ interface Product {
   shortFeatures: string[];
   fullFeatures: string[];
   description: string;
-  imagePlaceholder: string;
+  image: any;
   themeColor: string;
 }
 
@@ -33,7 +37,7 @@ const productsData: Product[] = [
     ],
     description:
       "Immerse your space in the tranquil essence of the ocean. Ocean Breeze is specifically formulated to create a calming, stress-free environment perfect for meditation, yoga, or unwinding after a long day.",
-    imagePlaceholder: "Ocean Breeze Image",
+    image: oceanBreezeBlue,
     themeColor: "text-navy",
   },
   {
@@ -51,7 +55,7 @@ const productsData: Product[] = [
     ],
     description:
       "Nature Bliss brings the uplifting scent of blooming jasmine into your home. Its sweet, delicate aroma is known to elevate the mood, promote positivity, and provide an all-day lingering freshness.",
-    imagePlaceholder: "Nature Bliss Image",
+    image: natureBliss,
     themeColor: "text-navy",
   },
   {
@@ -69,7 +73,7 @@ const productsData: Product[] = [
     ],
     description:
       "Our most luxurious offering, Royal Rose captures the timeless elegance of fresh roses. Designed to create a romantic and sophisticated ambiance, this premium kit is perfect for special rituals and exquisite gifting.",
-    imagePlaceholder: "Royal Rose Image",
+    image: oceanBreezeRed,
     themeColor: "text-navy",
   },
 ];
@@ -187,14 +191,14 @@ export default function Products() {
                     }}
                   >
                     {/* ~80% Image Area */}
-                    <div className="h-[300px] sm:h-[340px] bg-white/40 flex flex-col items-center justify-center relative overflow-hidden transition-all duration-500">
+                    <div className="h-[300px] sm:h-[340px] bg-[#FAF7F0] flex flex-col items-center justify-center relative overflow-hidden transition-all duration-500">
                       {/* Ancient decorative frame inside image */}
-                      <div className="absolute inset-3 border border-[#C4A052]/10 rounded-sm pointer-events-none transition-all duration-500"></div>
+                      <div className="absolute inset-3 border border-[#C4A052]/20 rounded-sm pointer-events-none transition-all duration-500 z-20"></div>
                       
-                      <span className="text-[#C4A052]/60 font-bodoni text-xl italic tracking-widest">{product.imagePlaceholder}</span>
+                      <Image src={product.image} alt={product.name} fill className="object-contain p-3 z-0 transition-transform duration-700 hover:scale-105" />
                       
                       {/* Overlay Price Tag - Ancient style */}
-                      <div className="absolute top-6 right-6 font-bodoni text-sm font-bold text-navy tracking-widest">
+                      <div className="absolute top-6 right-6 font-bodoni text-sm font-bold text-navy tracking-widest z-20 bg-[#FAF7F0]/90 px-3 py-1 shadow-sm backdrop-blur-sm">
                         {product.price}
                       </div>
                     </div>
@@ -257,9 +261,9 @@ export default function Products() {
               </button>
 
               {/* Image Side */}
-              <div className="w-full md:w-5/12 bg-white/40 h-64 md:h-auto flex items-center justify-center relative border-b md:border-b-0 md:border-r border-[#C4A052]/20">
-                <div className="absolute inset-4 border border-[#C4A052]/10 rounded-sm pointer-events-none"></div>
-                <span className="text-[#C4A052]/60 font-bodoni text-xl italic tracking-widest">{selectedProduct.imagePlaceholder}</span>
+              <div className="w-full md:w-5/12 bg-[#FAF7F0] h-64 md:h-auto flex items-center justify-center relative border-b md:border-b-0 md:border-r border-[#C4A052]/20">
+                <div className="absolute inset-4 border border-[#C4A052]/20 rounded-sm pointer-events-none z-20"></div>
+                <Image src={selectedProduct.image} alt={selectedProduct.name} fill className="object-contain p-3 z-0" />
               </div>
 
               {/* Details Side */}

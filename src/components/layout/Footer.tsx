@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import logo from "../../app/assets/logo.png";
 
@@ -14,10 +16,10 @@ export default function Footer() {
           <div className="text-center sm:text-left">
             <h4 className="font-bodoni font-bold text-xl mb-4 tracking-widest text-[#C4A052] uppercase">Quick Links</h4>
             <ul className="space-y-3 text-sm opacity-80 font-light">
-              <li><a href="#home" className="hover:text-[#C4A052] transition-colors">Home</a></li>
-              <li><a href="#products" className="hover:text-[#C4A052] transition-colors">Products</a></li>
-              <li><a href="#about" className="hover:text-[#C4A052] transition-colors">About Us</a></li>
-              <li><a href="#contact" className="hover:text-[#C4A052] transition-colors">Contact</a></li>
+              <li><button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="hover:text-[#C4A052] transition-colors">Home</button></li>
+              <li><button onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-[#C4A052] transition-colors">Products</button></li>
+              <li><button onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-[#C4A052] transition-colors">About Us</button></li>
+              <li><button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-[#C4A052] transition-colors">Contact</button></li>
             </ul>
           </div>
           <div className="text-center sm:text-left">
