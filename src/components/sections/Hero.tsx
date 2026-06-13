@@ -130,12 +130,13 @@ export default function Hero() {
 
             {/* CTA Button */}
             <motion.button
+              onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.2)" }}
-              whileTap={{ scale: 0.97 }}
-              transition={{ duration: 0.5, delay: 1 }}
-              className="absolute bottom-0 z-20 px-6 sm:px-10 md:px-12 py-3 sm:py-4 text-white text-xs sm:text-sm md:text-base font-bold tracking-[0.15em] uppercase shadow-lg whitespace-nowrap rounded-sm"
+              whileHover={{ scale: 1.08, y: -4, boxShadow: "0 20px 25px -5px rgba(0,0,0,0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+              className="absolute bottom-0 z-30 cursor-pointer px-6 sm:px-10 md:px-12 py-3 sm:py-4 text-white text-xs sm:text-sm md:text-base font-bold tracking-[0.15em] uppercase shadow-lg whitespace-nowrap rounded-sm hover:ring-4 hover:ring-[#B58E62]/50"
               style={{ backgroundColor: "#B58E62" }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#A37B53")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#B58E62")}
