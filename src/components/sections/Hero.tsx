@@ -21,7 +21,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="min-h-[100dvh] flex flex-col relative overflow-hidden bg-light-bg text-center pt-28 sm:pt-32 md:pt-36"
+      className="flex flex-col relative overflow-hidden bg-light-bg text-center pt-28 sm:pt-32 md:pt-36 pb-12 sm:pb-16"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/10 via-white/40 to-transparent pointer-events-none" />
@@ -108,8 +108,8 @@ export default function Hero() {
         </div>
 
         {/* Image + CTA */}
-        <div className="relative w-full max-w-[1400px] mx-auto flex flex-col items-center justify-center mt-2 sm:mt-4 md:mt-6 h-[45vh] sm:h-[55vh] md:h-[65vh]">
-          <div className="w-full relative flex justify-center items-center h-full">
+        <div className="relative w-full max-w-[1400px] mx-auto flex flex-col items-center justify-center mt-8 sm:mt-12 md:mt-16 mb-4">
+          <div className="w-full relative grid place-items-center">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -117,12 +117,12 @@ export default function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.97 }}
                 transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="w-full h-full absolute inset-0 flex justify-center items-center"
+                className="col-start-1 row-start-1 w-full sm:w-11/12 md:w-10/12 flex justify-center items-center pb-8"
               >
                 <Image
                   src={images[active]}
                   alt="MARA Singhe Product Range"
-                  className="w-auto h-full max-w-full object-contain drop-shadow-2xl"
+                  className="w-[120%] sm:w-full max-w-none sm:max-w-full h-auto object-contain drop-shadow-2xl scale-110 sm:scale-125 transition-transform duration-700"
                   priority
                 />
               </motion.div>
@@ -135,7 +135,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.2)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.5, delay: 1 }}
-              className="absolute z-20 px-6 sm:px-10 md:px-12 py-3 sm:py-4 text-white text-xs sm:text-sm md:text-base font-bold tracking-[0.15em] uppercase shadow-lg whitespace-nowrap rounded-sm"
+              className="absolute bottom-0 z-20 px-6 sm:px-10 md:px-12 py-3 sm:py-4 text-white text-xs sm:text-sm md:text-base font-bold tracking-[0.15em] uppercase shadow-lg whitespace-nowrap rounded-sm"
               style={{ backgroundColor: "#B58E62" }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#A37B53")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#B58E62")}
