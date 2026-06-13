@@ -255,41 +255,39 @@ export default function Products() {
             >
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-2 right-2 sm:top-4 sm:right-4 p-2 bg-white/90 backdrop-blur-md sm:bg-[#FAF7F0] border border-[#C4A052]/20 hover:bg-[#C4A052]/10 transition-colors z-30 cursor-pointer rounded-full sm:rounded-none shadow-sm sm:shadow-none"
+                className="absolute top-4 right-4 p-2 bg-[#FAF7F0] border border-[#C4A052]/20 hover:bg-[#C4A052]/10 transition-colors z-20 cursor-pointer"
               >
-                <X className="w-4 h-4 sm:w-5 sm:h-5 text-[#C4A052]" />
+                <X className="w-5 h-5 text-[#C4A052]" />
               </button>
 
               {/* Image Side */}
-              <div className="w-full md:w-5/12 bg-[#FAF7F0] h-72 sm:h-80 md:h-auto shrink-0 flex items-center justify-center relative border-b md:border-b-0 md:border-r border-[#C4A052]/20">
-                <div className="absolute inset-2 sm:inset-4 border border-[#C4A052]/20 rounded-sm pointer-events-none z-20"></div>
-                <Image src={selectedProduct.image} alt={selectedProduct.name} fill className="object-contain p-2 sm:p-5 z-0" />
+              <div className="w-full md:w-5/12 bg-[#FAF7F0] h-64 md:h-auto flex items-center justify-center relative border-b md:border-b-0 md:border-r border-[#C4A052]/20">
+                <div className="absolute inset-4 border border-[#C4A052]/20 rounded-sm pointer-events-none z-20"></div>
+                <Image src={selectedProduct.image} alt={selectedProduct.name} fill className="object-contain p-3 z-0" />
               </div>
 
               {/* Details Side */}
-              <div className="w-full md:w-7/12 p-5 sm:p-8 md:p-12 flex flex-col overflow-y-auto relative">
-                <div className="flex justify-between items-start mb-3 sm:mb-4">
-                  <h3 className="font-bodoni text-2xl sm:text-3xl md:text-4xl font-bold text-navy tracking-wide pr-8 sm:pr-0">{selectedProduct.name}</h3>
-                  <div className="text-lg sm:text-xl font-bodoni font-bold text-[#C4A052] tracking-widest mt-1 hidden sm:block">{selectedProduct.price}</div>
+              <div className="w-full md:w-7/12 p-8 sm:p-10 md:p-12 flex flex-col overflow-y-auto">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="font-bodoni text-3xl md:text-4xl font-bold text-navy tracking-wide">{selectedProduct.name}</h3>
+                  <div className="text-xl font-bodoni font-bold text-[#C4A052] tracking-widest mt-1">{selectedProduct.price}</div>
                 </div>
                 
-                <div className="text-lg font-bodoni font-bold text-[#C4A052] tracking-widest mb-3 sm:hidden">{selectedProduct.price}</div>
-                
-                <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                  <span className="bg-[#FAF7F0] border border-[#C4A052]/20 px-2 py-1 sm:px-3 font-bodoni text-[9px] sm:text-[10px] font-semibold text-[#C4A052] tracking-[0.2em] uppercase">
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="bg-[#FAF7F0] border border-[#C4A052]/20 px-3 py-1 font-bodoni text-[10px] font-semibold text-[#C4A052] tracking-[0.2em] uppercase">
                     {selectedProduct.size}
                   </span>
-                  <span className="text-xs sm:text-sm font-light text-gray-500 italic">{selectedProduct.subtitle}</span>
+                  <span className="text-sm font-light text-gray-500 italic">{selectedProduct.subtitle}</span>
                 </div>
 
-                <div className="w-8 sm:w-12 h-[1px] bg-[#C4A052]/40 mb-4 sm:mb-6"></div>
+                <div className="w-12 h-[1px] bg-[#C4A052]/40 mb-6"></div>
 
-                <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed font-light text-sm sm:text-base">
+                <p className="text-gray-600 mb-8 leading-relaxed font-light">
                   {selectedProduct.description}
                 </p>
 
-                <h4 className="font-bodoni text-[10px] sm:text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-3 sm:mb-4">Product Features</h4>
-                <ul className="text-xs sm:text-sm text-gray-600 mb-8 sm:mb-10 space-y-2 sm:space-y-3 flex-1 font-light pb-16 sm:pb-0">
+                <h4 className="font-bodoni text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-4">Product Features</h4>
+                <ul className="text-sm text-gray-600 mb-10 space-y-3 flex-1 font-light">
                   {selectedProduct.fullFeatures.map((feat, idx) => (
                     <li key={idx} className="flex items-start">
                       <span className="text-[#C4A052] mr-3 font-bodoni">•</span>
@@ -298,14 +296,12 @@ export default function Products() {
                   ))}
                 </ul>
 
-                <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-0 sm:relative bg-gradient-to-t from-[#FAF7F0] via-[#FAF7F0] to-transparent sm:bg-none z-10 pt-12 sm:pt-0">
-                  <button
-                    onClick={handleInquire}
-                    className="w-full py-3 sm:py-4 bg-[#FAF7F0] sm:bg-transparent border border-[#C4A052] text-[#C4A052] hover:bg-[#C4A052] hover:text-white transition-all font-bodoni text-lg sm:text-xl italic tracking-[0.1em] cursor-pointer shadow-lg sm:shadow-none"
-                  >
-                    Inquire to Order
-                  </button>
-                </div>
+                <button
+                  onClick={handleInquire}
+                  className="w-full py-4 bg-transparent border border-[#C4A052] text-[#C4A052] hover:bg-[#C4A052] hover:text-white transition-all font-bodoni text-xl italic tracking-[0.1em] cursor-pointer"
+                >
+                  Inquire to Order
+                </button>
               </div>
             </motion.div>
           </div>
