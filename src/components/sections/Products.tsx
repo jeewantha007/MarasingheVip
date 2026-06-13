@@ -97,7 +97,7 @@ export default function Products() {
             <div key={product.id} className="group rounded-none overflow-hidden border border-[#C4A052]/20 bg-[#FAF7F0] shadow-sm hover:shadow-[0_20px_40px_rgba(18,18,69,0.08)] transition-all duration-500 flex flex-col relative">
               
               {/* ~80% Image Area */}
-              <div className="h-[450px] bg-white/40 flex flex-col items-center justify-center relative overflow-hidden group-hover:bg-white/70 transition-all duration-500">
+              <div className="h-[320px] sm:h-[350px] bg-white/40 flex flex-col items-center justify-center relative overflow-hidden group-hover:bg-white/70 transition-all duration-500">
                 {/* Ancient decorative frame inside image */}
                 <div className="absolute inset-3 border border-[#C4A052]/10 rounded-sm pointer-events-none transition-all duration-500 group-hover:inset-4 group-hover:border-[#C4A052]/30"></div>
                 
