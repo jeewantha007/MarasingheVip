@@ -34,7 +34,7 @@ const productsData: Product[] = [
     description:
       "Immerse your space in the tranquil essence of the ocean. Ocean Breeze is specifically formulated to create a calming, stress-free environment perfect for meditation, yoga, or unwinding after a long day.",
     imagePlaceholder: "Ocean Breeze Image",
-    themeColor: "text-blue-600",
+    themeColor: "text-navy",
   },
   {
     id: "nature-bliss",
@@ -52,7 +52,7 @@ const productsData: Product[] = [
     description:
       "Nature Bliss brings the uplifting scent of blooming jasmine into your home. Its sweet, delicate aroma is known to elevate the mood, promote positivity, and provide an all-day lingering freshness.",
     imagePlaceholder: "Nature Bliss Image",
-    themeColor: "text-green-600",
+    themeColor: "text-navy",
   },
   {
     id: "royal-rose",
@@ -70,7 +70,7 @@ const productsData: Product[] = [
     description:
       "Our most luxurious offering, Royal Rose captures the timeless elegance of fresh roses. Designed to create a romantic and sophisticated ambiance, this premium kit is perfect for special rituals and exquisite gifting.",
     imagePlaceholder: "Royal Rose Image",
-    themeColor: "text-burgundy",
+    themeColor: "text-navy",
   },
 ];
 
@@ -88,8 +88,8 @@ export default function Products() {
     <section id="products" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-bodoni text-4xl md:text-5xl font-bold text-text-dark mb-4">Our Premium Collection</h2>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
+          <h2 className="font-bodoni text-3xl md:text-[2.5rem] text-navy uppercase tracking-[0.18em] mb-4 leading-snug text-center">Our Premium Collection</h2>
+          <div className="w-16 h-[2px] bg-[#C4A052] mx-auto mb-14"></div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

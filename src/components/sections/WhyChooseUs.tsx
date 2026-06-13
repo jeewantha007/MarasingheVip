@@ -61,10 +61,12 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.7 }}
           className="text-center mb-12"
         >
-          <h2 className="font-bodoni text-3xl md:text-4xl font-bold text-white mb-4 tracking-wide">
-            The MARA සිංහ Difference
-          </h2>
-          <div className="w-24 h-[2px] bg-[#C4A052] mx-auto opacity-80"></div>
+          <motion.div variants={itemVariants}>
+            <h2 className="font-bodoni text-3xl md:text-[2.5rem] text-white uppercase tracking-[0.18em] mb-4 leading-snug text-center">
+              The MARA සිංහ Difference
+            </h2>
+          </motion.div>
+          <motion.div variants={itemVariants} className="w-16 h-[2px] bg-[#C4A052] mx-auto mb-14"></motion.div>
           <p className="mt-6 text-gray-300 max-w-2xl mx-auto font-light leading-relaxed">
             Experience the pinnacle of luxury and serenity. We blend timeless tradition with modern sophistication.
           </p>

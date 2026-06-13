@@ -45,3 +45,9 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
+
+@layer base {
+  a, button, [role="button"], input[type="submit"], input[type="button"] {
+    cursor: pointer !important;
+  }
+}
