@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Product {
   id: string;
@@ -76,6 +76,15 @@ const productsData: Product[] = [
 
 export default function Products() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [activeIndex, setActiveIndex] = useState(1); // Start with middle product active
+
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % productsData.length);
+  };
+
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + productsData.length) % productsData.length);
+  };
 
   const handleInquire = () => {
     setSelectedProduct(null);
@@ -92,41 +101,123 @@ export default function Products() {
           <div className="w-16 h-[2px] bg-[#C4A052] mx-auto mb-14"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {productsData.map((product) => (
-            <div key={product.id} className="group rounded-none overflow-hidden border border-[#C4A052]/20 bg-[#FAF7F0] shadow-sm hover:shadow-[0_20px_40px_rgba(18,18,69,0.08)] transition-all duration-500 flex flex-col relative">
-              
-              {/* ~80% Image Area */}
-              <div className="h-[320px] sm:h-[350px] bg-white/40 flex flex-col items-center justify-center relative overflow-hidden group-hover:bg-white/70 transition-all duration-500">
-                {/* Ancient decorative frame inside image */}
-                <div className="absolute inset-3 border border-[#C4A052]/10 rounded-sm pointer-events-none transition-all duration-500 group-hover:inset-4 group-hover:border-[#C4A052]/30"></div>
-                
-                <span className="text-[#C4A052]/60 font-bodoni text-xl italic tracking-widest">{product.imagePlaceholder}</span>
-                
-                {/* Overlay Price Tag - Ancient style */}
-                <div className="absolute top-6 right-6 font-bodoni text-sm font-bold text-navy tracking-widest">
-                  {product.price}
-                </div>
-              </div>
+        <div className="relative h-[650px] w-full flex items-center justify-center overflow-hidden px-4">
+          {/* Navigation Arrows */}
+          <button
+            onClick={handlePrev}
+            className="absolute left-2 sm:left-10 z-40 p-3 sm:p-4 rounded-full bg-[#FAF7F0] border border-[#C4A052]/30 text-[#C4A052] shadow-xl hover:bg-[#C4A052] hover:text-white transition-all cursor-pointer group"
+          >
+            <ChevronLeft className="w-6 h-6 transform group-hover:-translate-x-1 transition-transform" />
+          </button>
 
-              {/* ~20% Text Area */}
-              <div className="p-6 flex flex-col items-center text-center flex-1 justify-end border-t border-[#C4A052]/10 relative mt-2">
-                <span className="absolute -top-3 bg-[#FAF7F0] px-4 font-bodoni text-[10px] font-semibold text-[#C4A052] tracking-[0.2em] uppercase">
-                  {product.size}
-                </span>
+          <button
+            onClick={handleNext}
+            className="absolute right-2 sm:right-10 z-40 p-3 sm:p-4 rounded-full bg-[#FAF7F0] border border-[#C4A052]/30 text-[#C4A052] shadow-xl hover:bg-[#C4A052] hover:text-white transition-all cursor-pointer group"
+          >
+            <ChevronRight className="w-6 h-6 transform group-hover:translate-x-1 transition-transform" />
+          </button>
 
-                <h3 className="font-bodoni text-2xl font-bold text-navy tracking-wide mb-2">{product.name}</h3>
-                <p className="font-light text-gray-500 text-sm mb-6 px-4 leading-relaxed italic">{product.subtitle}</p>
+          <div className="relative w-full max-w-6xl h-full flex justify-center items-center">
+            <AnimatePresence initial={false}>
+              {productsData.map((product, index) => {
+                // Calculate position relative to active index
+                const offset = index - activeIndex;
+                const isCenter = offset === 0;
                 
-                <button
-                  onClick={() => setSelectedProduct(product)}
-                  className="w-full py-4 bg-transparent border border-[#C4A052] text-[#C4A052] hover:bg-[#C4A052] hover:text-white transition-all font-bodoni uppercase tracking-[0.15em] text-xs font-bold cursor-pointer"
-                >
-                  View Details
-                </button>
-              </div>
-            </div>
-          ))}
+                // For 3 items: if offset is -1 or +2 -> left. If +1 or -2 -> right.
+                // We normalize offset for wrap around.
+                const length = productsData.length;
+                let normalizedOffset = offset;
+                if (offset < -1) normalizedOffset += length;
+                if (offset > 1) normalizedOffset -= length;
+
+                const isLeft = normalizedOffset === -1;
+                const isRight = normalizedOffset === 1;
+
+                if (!isCenter && !isLeft && !isRight) return null; // Hidden if > 3 items
+
+                let xPos = "0%";
+                let zIndex = 10;
+                let scale = 0.85;
+                let opacity = 0.4;
+                let filter = "blur(4px)";
+
+                if (isCenter) {
+                  xPos = "0%";
+                  zIndex = 30;
+                  scale = 1;
+                  opacity = 1;
+                  filter = "blur(0px)";
+                } else if (isLeft) {
+                  xPos = "-105%";
+                  zIndex = 20;
+                } else if (isRight) {
+                  xPos = "105%";
+                  zIndex = 20;
+                }
+
+                // Make mobile offsets smaller
+                const mobileXPos = isCenter ? "0%" : isLeft ? "-40%" : "40%";
+                const mdXPos = xPos;
+
+                return (
+                  <motion.div
+                    key={product.id}
+                    animate={{
+                      x: typeof window !== "undefined" && window.innerWidth < 768 ? mobileXPos : mdXPos,
+                      scale: scale,
+                      opacity: opacity,
+                      zIndex: zIndex,
+                      filter: filter,
+                    }}
+                    transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+                    className={`absolute w-[280px] sm:w-[320px] md:w-[360px] rounded-none overflow-hidden border border-[#C4A052]/20 bg-[#FAF7F0] flex flex-col
+                      ${isCenter ? "shadow-[0_30px_60px_rgba(18,18,69,0.15)]" : "shadow-md cursor-pointer"}
+                    `}
+                    onClick={() => {
+                      if (!isCenter) setActiveIndex(index);
+                    }}
+                  >
+                    {/* ~80% Image Area */}
+                    <div className="h-[350px] bg-white/40 flex flex-col items-center justify-center relative overflow-hidden transition-all duration-500">
+                      {/* Ancient decorative frame inside image */}
+                      <div className="absolute inset-3 border border-[#C4A052]/10 rounded-sm pointer-events-none transition-all duration-500"></div>
+                      
+                      <span className="text-[#C4A052]/60 font-bodoni text-xl italic tracking-widest">{product.imagePlaceholder}</span>
+                      
+                      {/* Overlay Price Tag - Ancient style */}
+                      <div className="absolute top-6 right-6 font-bodoni text-sm font-bold text-navy tracking-widest">
+                        {product.price}
+                      </div>
+                    </div>
+
+                    {/* ~20% Text Area */}
+                    <div className="p-6 flex flex-col items-center text-center flex-1 justify-end border-t border-[#C4A052]/10 relative mt-2 bg-[#FAF7F0]">
+                      <span className="absolute -top-3 bg-[#FAF7F0] px-4 font-bodoni text-[10px] font-semibold text-[#C4A052] tracking-[0.2em] uppercase">
+                        {product.size}
+                      </span>
+
+                      <h3 className="font-bodoni text-2xl font-bold text-navy tracking-wide mb-2">{product.name}</h3>
+                      <p className="font-light text-gray-500 text-sm mb-6 px-4 leading-relaxed italic line-clamp-1">{product.subtitle}</p>
+                      
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          if (isCenter) setSelectedProduct(product);
+                          else setActiveIndex(index);
+                        }}
+                        className={`w-full py-4 bg-transparent border border-[#C4A052] text-[#C4A052] transition-all font-bodoni uppercase tracking-[0.15em] text-xs font-bold cursor-pointer
+                          ${isCenter ? "hover:bg-[#C4A052] hover:text-white" : "opacity-0"}
+                        `}
+                      >
+                        View Details
+                      </button>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
+          </div>
         </div>
       </div>
 
