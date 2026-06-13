@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: "Experience the art of premium fragrance and cosmetic items with MARA සිංහ's luxury collection.",
     images: [
       {
-        url: "/assets/hero.png",
+        url: "/banner.png",
         width: 1200,
         height: 630,
         alt: "MARA සිංහ VIP Collection",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "MARA සිංහ | Premium Fragrances",
     description: "Experience the art of premium fragrance and cosmetics.",
-    images: ["/assets/hero.png"],
+    images: ["/banner.png"],
   },
 };
 
