@@ -47,9 +47,9 @@ export default function Navbar() {
       <header className="w-full bg-[#FAF7F0]/95 backdrop-blur-md shadow-sm border-b-[2px] border-[#C4A052]/40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 relative">
-            {/* Break-out Circular Logo Area */}
-            <div className="absolute left-0 top-1 bg-white rounded-full p-2 shadow-md flex items-center justify-center w-20 h-20 md:w-28 md:h-28 z-50 transition-transform hover:scale-105">
-              <Image src={logo} alt="MARA සිංහ Logo" height={86} priority style={{ width: "auto" }} className="object-contain" />
+            {/* Break-out Logo Crest */}
+            <div className="absolute left-0 top-0 bg-[#FAF7F0] rounded-b-[2rem] md:rounded-b-[3.5rem] border-b-[2px] border-x-[2px] border-[#C4A052]/40 shadow-[0_15px_30px_rgba(18,18,69,0.08)] flex items-center justify-center w-24 h-[6rem] md:w-32 md:h-[8.5rem] z-50 pt-2 transition-transform duration-500 hover:scale-105">
+              <Image src={logo} alt="MARA සිංහ Logo" height={95} priority style={{ width: "auto", maxHeight: "85%" }} className="object-contain" />
             </div>
             
             {/* Spacer to prevent overlap with absolute logo */}
