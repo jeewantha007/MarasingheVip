@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import logo from "../../app/assets/logo.png";
 import { Menu, X } from "lucide-react";
 
@@ -77,18 +78,24 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation Dropdown */}
-        <div 
-          className={`md:hidden absolute w-full bg-[#FAF7F0] shadow-lg transition-all duration-300 ease-in-out border-t-2 border-[#C4A052]/30 ${
-            isMobileMenuOpen ? "max-h-64 opacity-100 py-6" : "max-h-0 opacity-0 overflow-hidden py-0 border-t-0"
-          }`}
-        >
-          <nav className="flex flex-col space-y-6 px-8">
-            <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Home</a>
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">About Us</a>
-            <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Products</a>
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Contact</a>
-          </nav>
-        </div>
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div 
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden absolute w-full bg-[#FAF7F0] shadow-lg border-t-2 border-[#C4A052]/30 overflow-hidden"
+            >
+              <nav className="flex flex-col space-y-6 px-8 py-6">
+                <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Home</a>
+                <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">About Us</a>
+                <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Products</a>
+                <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Contact</a>
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
     </div>
   );

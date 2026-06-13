@@ -179,7 +179,7 @@ export default function Products() {
                       filter: filter,
                     }}
                     transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
-                    className={`absolute w-[300px] sm:w-[360px] md:w-[420px] rounded-none overflow-hidden border border-[#C4A052]/20 bg-[#FAF7F0] flex flex-col
+                    className={`absolute w-[280px] sm:w-[360px] md:w-[420px] rounded-none overflow-hidden border border-[#C4A052]/20 bg-[#FAF7F0] flex flex-col
                       ${isCenter ? "shadow-[0_30px_60px_rgba(18,18,69,0.15)]" : "shadow-md cursor-pointer"}
                     `}
                     onClick={() => {
