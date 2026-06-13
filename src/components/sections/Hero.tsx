@@ -4,17 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import heroImg from "../../app/assets/hero.png";
-import heroImg2 from "../../app/assets/hero2.png";
-import heroImg3 from "../../app/assets/hero3.png";
+import heroImg1 from "../../app/assets/hero-1.png";
+import heroImg2 from "../../app/assets/hero-2.png";
 
-const images = [heroImg, heroImg2, heroImg3];
+const images = [heroImg2, heroImg1, heroImg];
 
 export default function Hero() {
   const [active, setActive] = useState(0);
 
   useEffect(() => {
     if (images.length <= 1) return;
-    const t = setInterval(() => setActive((p) => (p + 1) % images.length), 5000);
+    const t = setInterval(() => setActive((p) => (p + 1) % images.length), 8000);
     return () => clearInterval(t);
   }, []);
 
@@ -110,15 +110,15 @@ export default function Hero() {
         {/* Image + CTA */}
         <div className="relative w-full max-w-[1400px] mx-auto flex flex-col items-center justify-center mt-8 sm:mt-12 md:mt-16 mb-4">
           <div className="w-full relative grid place-items-center">
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               <motion.div
                 key={active}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1.05 }}
                 exit={{ opacity: 0, scale: 1.1 }}
                 transition={{ 
-                  opacity: { duration: 0.8, ease: "easeInOut" },
-                  scale: { duration: 6, ease: "linear" } 
+                  opacity: { duration: 1.5, ease: "easeInOut" },
+                  scale: { duration: 9, ease: "linear" } 
                 }}
                 className="col-start-1 row-start-1 w-full sm:w-11/12 md:w-10/12 flex justify-center items-center pb-8"
               >
