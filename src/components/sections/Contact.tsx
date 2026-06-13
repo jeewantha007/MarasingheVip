@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { Mail, Phone, Globe, Building2 } from "lucide-react";
+import { Mail, Phone, Globe, MapPin } from "lucide-react";
 
 export default function Contact() {
   const staggerVariants: Variants = {
@@ -21,7 +21,40 @@ export default function Contact() {
     <section id="contact" className="py-24 bg-white relative overflow-hidden text-navy">
       {/* Decorative Golden Accent */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#C4A052]/20 to-transparent"></div>
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#C4A052]/5 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#C4A052]/5 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+      {/* Flower Rain */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        {Array.from({ length: 12 }).map((_, i) => {
+          const left = `${(i * 27) % 100}%`;
+          const delay = (i * 1.5) % 15;
+          const duration = 18 + (i % 5) * 4;
+          const scale = 0.3 + (i % 4) * 0.15;
+
+          return (
+            <motion.div
+              key={i}
+              className="absolute top-[-10%]"
+              style={{ left }}
+              animate={{
+                y: ["0vh", "120vh"],
+                x: ["0px", `${i % 2 === 0 ? 50 : -50}px`, "0px"],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                y: { duration, repeat: Infinity, ease: "linear", delay },
+                x: { duration: duration * 0.5, repeat: Infinity, ease: "easeInOut", repeatType: "mirror", delay },
+                rotate: { duration: duration * 0.8, repeat: Infinity, ease: "linear", delay },
+              }}
+            >
+              <div
+                className="w-3 h-3 sm:w-4 sm:h-4 bg-[#C4A052]/20 rounded-[50%] rounded-tr-sm backdrop-blur-sm shadow-sm"
+                style={{ transform: `scale(${scale}) rotate(45deg)` }}
+              />
+            </motion.div>
+          );
+        })}
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -45,11 +78,11 @@ export default function Contact() {
             <motion.div variants={staggerVariants} className="space-y-8">
               <motion.div variants={fadeUpVariants} className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-navy/5 border border-navy/10 rounded-full flex items-center justify-center shrink-0">
-                  <Building2 className="w-5 h-5 text-[#C4A052]" />
+                  <MapPin className="w-5 h-5 text-[#C4A052]" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-navy mb-1 tracking-wide">Headquarters</h4>
-                  <p className="text-gray-600 font-light">MARA සිංහ Premium Fragrances & Cosmetics</p>
+                  <h4 className="font-bold text-navy mb-1 tracking-wide">Location</h4>
+                  <p className="text-gray-600 font-light">16/8/1 Thalangama North, Koswatta, Battaramulla</p>
                 </div>
               </motion.div>
 
@@ -86,12 +119,12 @@ export default function Contact() {
             <motion.div
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="bg-[#FAF7F0] border border-[#C4A052]/20 p-8 md:p-12 rounded-xl shadow-[0_20px_60px_rgba(18,18,69,0.12)] relative z-10"
+              className="bg-[#FAF7F0] border border-[#C4A052]/20 p-6 sm:p-8 md:p-12 rounded-xl shadow-[0_20px_60px_rgba(18,18,69,0.12)] relative z-10 w-full max-w-[100vw] overflow-hidden"
             >
-              <form className="space-y-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <form className="space-y-8 md:space-y-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                   <div className="relative">
-                    <label htmlFor="name" className="block font-bodoni text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-2">Full Name</label>
+                    <label htmlFor="name" className="block font-bodoni text-[10px] md:text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-2">Full Name</label>
                     <input 
                       type="text" 
                       id="name" 
@@ -100,7 +133,7 @@ export default function Contact() {
                     />
                   </div>
                   <div className="relative">
-                    <label htmlFor="phone" className="block font-bodoni text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-2">Phone Number</label>
+                    <label htmlFor="phone" className="block font-bodoni text-[10px] md:text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-2">Phone Number</label>
                     <input 
                       type="tel" 
                       id="phone" 
@@ -110,7 +143,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="relative">
-                  <label htmlFor="email" className="block font-bodoni text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-2">Email Address</label>
+                  <label htmlFor="email" className="block font-bodoni text-[10px] md:text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-2">Email Address</label>
                   <input 
                     type="email" 
                     id="email" 
@@ -119,7 +152,7 @@ export default function Contact() {
                   />
                 </div>
                 <div className="relative">
-                  <label htmlFor="message" className="block font-bodoni text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-2">Message</label>
+                  <label htmlFor="message" className="block font-bodoni text-[10px] md:text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-2">Message</label>
                   <textarea 
                     id="message" 
                     rows={3}
@@ -129,7 +162,7 @@ export default function Contact() {
                 </div>
                 <button 
                   type="button" 
-                  className="w-full py-5 bg-transparent border border-[#C4A052] text-[#C4A052] font-bodoni text-xl italic tracking-[0.1em] hover:bg-[#C4A052] hover:text-white transition-all duration-500 mt-6 group flex items-center justify-center gap-3"
+                  className="w-full py-4 sm:py-5 bg-transparent border border-[#C4A052] text-[#C4A052] font-bodoni text-lg sm:text-xl italic tracking-[0.1em] hover:bg-[#C4A052] hover:text-white transition-all duration-500 mt-6 group flex items-center justify-center gap-3 cursor-pointer"
                 >
                   Send Inquiry
                   <svg className="w-5 h-5 transform group-hover:translate-x-2 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">

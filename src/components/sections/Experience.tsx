@@ -8,7 +8,7 @@ export default function Experience() {
   };
 
   return (
-    <section className="relative py-32 md:py-48 bg-gray-100 flex items-center justify-center overflow-hidden">
+    <section className="relative py-20 sm:py-32 md:py-48 bg-gray-100 flex items-center justify-center overflow-hidden">
       {/* 
         Parallax Background Image 
         To add a real image, replace bg-white above with: bg-[url('/your-image.jpg')] bg-cover bg-center bg-fixed
@@ -27,22 +27,22 @@ export default function Experience() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="bg-white/70 backdrop-blur-md border border-white/40 p-8 md:p-12 rounded-2xl shadow-2xl max-w-lg text-center lg:text-left"
+          className="bg-white/80 backdrop-blur-md border border-white/40 p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl max-w-md w-full text-center lg:text-left mx-4 sm:mx-0"
         >
-          <h2 className="font-bodoni text-3xl md:text-[2.5rem] text-navy uppercase tracking-[0.18em] mb-4 leading-snug lg:text-left text-center">
+          <h2 className="font-bodoni text-xl sm:text-2xl md:text-3xl text-navy uppercase tracking-[0.18em] mb-3 leading-snug lg:text-left text-center">
             More Than a Product—<br />
             <span className="text-[#C4A052]">A Daily Ritual.</span>
           </h2>
           
-          <div className="w-16 h-[2px] bg-[#C4A052] mx-auto lg:mx-0 mb-10"></div>
+          <div className="w-12 h-[2px] bg-[#C4A052] mx-auto lg:mx-0 mb-6"></div>
           
-          <p className="text-gray-700 text-lg mb-8 leading-relaxed font-light">
+          <p className="text-gray-700 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed font-light">
             Immerse yourself in our curated collection of botanical fragrances and nourishing cosmetics. Designed for those who value tranquility, elegance, and the ultimate self-care experience.
           </p>
 
           <button 
             onClick={scrollToProducts}
-            className="px-8 py-4 bg-navy text-white text-sm uppercase tracking-[0.15em] font-bold rounded hover:bg-[#121245] hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+            className="w-full sm:w-auto px-6 sm:px-8 py-3 bg-navy text-white text-xs uppercase tracking-[0.15em] font-bold rounded hover:bg-[#121245] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer"
           >
             Explore the Collection
           </button>
