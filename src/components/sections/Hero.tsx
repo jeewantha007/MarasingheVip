@@ -79,7 +79,7 @@ export default function Hero() {
           >
             <div className="h-px w-6 sm:w-8 bg-[#C4A052]/50 mr-3 sm:mr-4" />
             <h2 className="font-bodoni text-sm sm:text-xl md:text-3xl text-[#C4A052] font-normal tracking-[0.2em] uppercase">
-              PREMIUM
+              CRAFTED IN SRI LANKA
             </h2>
             <div className="h-px w-6 sm:w-8 bg-[#C4A052]/50 ml-3 sm:ml-4" />
           </motion.div>
