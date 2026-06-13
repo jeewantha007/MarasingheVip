@@ -58,8 +58,8 @@ export default function Navbar() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-10">
               <a href="#home" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Home</a>
-              <a href="#products" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Products</a>
               <a href="#about" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">About Us</a>
+              <a href="#products" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Products</a>
               <a href="#contact" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Contact</a>
             </nav>
 
@@ -84,8 +84,8 @@ export default function Navbar() {
         >
           <nav className="flex flex-col space-y-4 px-6">
             <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Home</a>
-            <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Products</a>
             <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">About Us</a>
+            <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Products</a>
             <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Contact</a>
           </nav>
         </div>
