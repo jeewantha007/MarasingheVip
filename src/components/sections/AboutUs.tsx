@@ -15,10 +15,10 @@ export default function AboutUs() {
         <div className="w-16 h-[2px] bg-[#8B5E3C] mb-14"></div>
 
         {/* Side-by-Side Layout */}
-        <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-14 items-start w-full" style={{ display: 'flex', flexDirection: 'row', flexWrap: 'nowrap', justifyContent: 'center', gap: '3.5rem' }}>
+        <div className="flex flex-col md:flex-row justify-center gap-10 md:gap-14 items-start w-full">
 
           {/* Profile Image - Left Side, constrained height */}
-          <div className="w-full md:w-5/12 shrink-0 flex flex-col items-center md:items-end" style={{ width: '45%', flexShrink: 0 }}>
+          <div className="w-full md:w-5/12 shrink-0 flex flex-col items-center md:items-end">
             <Image
               src={profileImg}
               alt="M.M Mahesh Marasinghe"
@@ -44,7 +44,7 @@ export default function AboutUs() {
           </div>
 
           {/* Text Content - Right Side */}
-          <div className="w-full md:w-7/12 flex flex-col gap-5" style={{ width: '50%', fontSize: '16.5px' }}>
+          <div className="w-full md:w-7/12 flex flex-col gap-5 text-[16.5px]">
             <p className="text-gray-500 leading-[1.8] font-light">
               MARA Singhe Premium Incense Sticks is a proudly Sri Lankan brand founded by M.M. Mahesh Marasinghe, driven by a vision to create premium-quality incense products that combine tradition, craftsmanship, and exceptional fragrance experiences.
             </p>

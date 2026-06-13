@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import logo from "../../app/assets/logo.png";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,24 +44,50 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <header className="w-full bg-white/95 backdrop-blur-md shadow-md border-b border-gray-200">
+      <header className="w-full bg-white/95 backdrop-blur-md shadow-md border-b border-gray-200 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 relative">
             {/* Break-out Circular Logo Area */}
-            <div className="absolute left-0 top-1 bg-white rounded-full p-2 shadow-md flex items-center justify-center w-28 h-28 z-50 transition-transform hover:scale-105">
+            <div className="absolute left-0 top-1 bg-white rounded-full p-2 shadow-md flex items-center justify-center w-20 h-20 md:w-28 md:h-28 z-50 transition-transform hover:scale-105">
               <Image src={logo} alt="MARA Singhe Logo" height={86} className="object-contain" />
             </div>
             
             {/* Spacer to prevent overlap with absolute logo */}
-            <div className="w-32 flex-shrink-0"></div>
+            <div className="w-20 md:w-32 flex-shrink-0"></div>
 
+            {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-10">
               <a href="#home" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Home</a>
               <a href="#products" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Products</a>
               <a href="#about" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">About Us</a>
               <a href="#contact" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Contact</a>
             </nav>
+
+            {/* Mobile Menu Button */}
+            <div className="md:hidden flex items-center">
+              <button 
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-gray-900 hover:text-primary focus:outline-none p-2"
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              </button>
+            </div>
           </div>
+        </div>
+
+        {/* Mobile Navigation Dropdown */}
+        <div 
+          className={`md:hidden absolute w-full bg-white shadow-lg transition-all duration-300 ease-in-out border-t border-gray-100 ${
+            isMobileMenuOpen ? "max-h-64 opacity-100 py-4" : "max-h-0 opacity-0 overflow-hidden py-0 border-t-0"
+          }`}
+        >
+          <nav className="flex flex-col space-y-4 px-6">
+            <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Home</a>
+            <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Products</a>
+            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">About Us</a>
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Contact</a>
+          </nav>
         </div>
       </header>
     </div>

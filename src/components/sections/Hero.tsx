@@ -109,7 +109,7 @@ export default function Hero() {
         </div>
 
         {/* Image + CTA */}
-        <div className="relative w-full max-w-[1400px] mx-auto flex flex-col items-center justify-center mt-2 sm:mt-4 md:mt-6 h-[45vh] sm:h-[55vh] md:h-[75vh]">
+        <div className="relative w-full max-w-[1400px] mx-auto flex flex-col items-center justify-center mt-2 sm:mt-4 md:mt-6 flex-1 min-h-[45vh] sm:min-h-[55vh] md:min-h-[75vh]">
           <div className="w-full relative flex justify-center items-center h-full">
             <AnimatePresence mode="wait">
               <motion.div
@@ -136,7 +136,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05, y: -2, boxShadow: "0 10px 15px -3px rgba(0,0,0,0.2)" }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.5, delay: 1 }}
-              className="absolute z-20 px-6 sm:px-10 md:px-12 py-3 sm:py-4 text-white text-[10px] sm:text-xs md:text-sm font-bold tracking-[0.15em] uppercase shadow-lg whitespace-nowrap rounded-sm"
+              className="absolute z-20 px-6 sm:px-10 md:px-12 py-3 sm:py-4 text-white text-xs sm:text-sm md:text-base font-bold tracking-[0.15em] uppercase shadow-lg whitespace-nowrap rounded-sm"
               style={{ backgroundColor: "#B58E62" }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#A37B53")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#B58E62")}
