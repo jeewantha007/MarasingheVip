@@ -92,31 +92,35 @@ export default function Products() {
           <div className="w-16 h-[2px] bg-[#C4A052] mx-auto mb-14"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {productsData.map((product) => (
-            <div key={product.id} className="group rounded-lg overflow-hidden border border-gray-100 shadow-sm hover:shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col">
-              <div className="h-64 bg-gray-50 flex items-center justify-center relative">
-                <span className="text-gray-400">{product.imagePlaceholder}</span>
-                <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full shadow-sm text-sm font-bold text-navy">
+            <div key={product.id} className="group rounded-none overflow-hidden border border-[#C4A052]/20 bg-[#FAF7F0] shadow-sm hover:shadow-[0_20px_40px_rgba(18,18,69,0.08)] transition-all duration-500 flex flex-col relative">
+              
+              {/* ~80% Image Area */}
+              <div className="h-[450px] bg-white/40 flex flex-col items-center justify-center relative overflow-hidden group-hover:bg-white/70 transition-all duration-500">
+                {/* Ancient decorative frame inside image */}
+                <div className="absolute inset-3 border border-[#C4A052]/10 rounded-sm pointer-events-none transition-all duration-500 group-hover:inset-4 group-hover:border-[#C4A052]/30"></div>
+                
+                <span className="text-[#C4A052]/60 font-bodoni text-xl italic tracking-widest">{product.imagePlaceholder}</span>
+                
+                {/* Overlay Price Tag - Ancient style */}
+                <div className="absolute top-6 right-6 font-bodoni text-sm font-bold text-navy tracking-widest">
                   {product.price}
                 </div>
               </div>
-              <div className="p-6 flex flex-col flex-1">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-bodoni text-2xl font-bold">{product.name}</h3>
-                  <span className={`text-xs font-semibold px-2 py-1 rounded bg-gray-100 ${product.themeColor}`}>
-                    {product.size}
-                  </span>
-                </div>
-                <p className={`text-sm font-medium mb-4 ${product.themeColor}`}>{product.subtitle}</p>
-                <ul className="text-sm text-gray-600 mb-6 space-y-2 flex-1">
-                  {product.shortFeatures.map((feat, idx) => (
-                    <li key={idx}>• {feat}</li>
-                  ))}
-                </ul>
+
+              {/* ~20% Text Area */}
+              <div className="p-6 flex flex-col items-center text-center flex-1 justify-end border-t border-[#C4A052]/10 relative mt-2">
+                <span className="absolute -top-3 bg-[#FAF7F0] px-4 font-bodoni text-[10px] font-semibold text-[#C4A052] tracking-[0.2em] uppercase">
+                  {product.size}
+                </span>
+
+                <h3 className="font-bodoni text-2xl font-bold text-navy tracking-wide mb-2">{product.name}</h3>
+                <p className="font-light text-gray-500 text-sm mb-6 px-4 leading-relaxed italic">{product.subtitle}</p>
+                
                 <button
                   onClick={() => setSelectedProduct(product)}
-                  className="w-full py-3 border border-primary text-primary hover:bg-primary hover:text-white transition-colors rounded font-semibold"
+                  className="w-full py-4 bg-transparent border border-[#C4A052] text-[#C4A052] hover:bg-[#C4A052] hover:text-white transition-all font-bodoni uppercase tracking-[0.15em] text-xs font-bold cursor-pointer"
                 >
                   View Details
                 </button>
@@ -144,42 +148,46 @@ export default function Products() {
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-4xl bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row z-10 max-h-[90vh]"
+              className="relative w-full max-w-4xl bg-[#FAF7F0] border border-[#C4A052]/30 rounded-none shadow-[0_30px_60px_rgba(18,18,69,0.15)] overflow-hidden flex flex-col md:flex-row z-10 max-h-[90vh]"
             >
               <button
                 onClick={() => setSelectedProduct(null)}
-                className="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors z-20"
+                className="absolute top-4 right-4 p-2 bg-[#FAF7F0] border border-[#C4A052]/20 hover:bg-[#C4A052]/10 transition-colors z-20 cursor-pointer"
               >
-                <X className="w-5 h-5 text-gray-600" />
+                <X className="w-5 h-5 text-[#C4A052]" />
               </button>
 
               {/* Image Side */}
-              <div className="w-full md:w-5/12 bg-gray-50 h-64 md:h-auto flex items-center justify-center relative border-b md:border-b-0 md:border-r border-gray-100">
-                <span className="text-gray-400 font-medium">{selectedProduct.imagePlaceholder}</span>
+              <div className="w-full md:w-5/12 bg-white/40 h-64 md:h-auto flex items-center justify-center relative border-b md:border-b-0 md:border-r border-[#C4A052]/20">
+                <div className="absolute inset-4 border border-[#C4A052]/10 rounded-sm pointer-events-none"></div>
+                <span className="text-[#C4A052]/60 font-bodoni text-xl italic tracking-widest">{selectedProduct.imagePlaceholder}</span>
               </div>
 
               {/* Details Side */}
-              <div className="w-full md:w-7/12 p-6 sm:p-8 md:p-10 flex flex-col overflow-y-auto">
-                <div className="flex justify-between items-start mb-2">
-                  <h3 className="font-bodoni text-3xl font-bold text-navy">{selectedProduct.name}</h3>
-                  <div className="text-xl font-bold text-primary">{selectedProduct.price}</div>
+              <div className="w-full md:w-7/12 p-8 sm:p-10 md:p-12 flex flex-col overflow-y-auto">
+                <div className="flex justify-between items-start mb-4">
+                  <h3 className="font-bodoni text-3xl md:text-4xl font-bold text-navy tracking-wide">{selectedProduct.name}</h3>
+                  <div className="text-xl font-bodoni font-bold text-[#C4A052] tracking-widest mt-1">{selectedProduct.price}</div>
                 </div>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className={`text-sm font-semibold px-2 py-1 rounded bg-gray-100 ${selectedProduct.themeColor}`}>
+                
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="bg-[#FAF7F0] border border-[#C4A052]/20 px-3 py-1 font-bodoni text-[10px] font-semibold text-[#C4A052] tracking-[0.2em] uppercase">
                     {selectedProduct.size}
                   </span>
-                  <span className={`text-sm font-medium ${selectedProduct.themeColor}`}>{selectedProduct.subtitle}</span>
+                  <span className="text-sm font-light text-gray-500 italic">{selectedProduct.subtitle}</span>
                 </div>
 
-                <p className="text-gray-600 mb-8 leading-relaxed">
+                <div className="w-12 h-[1px] bg-[#C4A052]/40 mb-6"></div>
+
+                <p className="text-gray-600 mb-8 leading-relaxed font-light">
                   {selectedProduct.description}
                 </p>
 
-                <h4 className="font-bold text-navy mb-4">Product Features</h4>
-                <ul className="text-sm text-gray-600 mb-8 space-y-3 flex-1">
+                <h4 className="font-bodoni text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-4">Product Features</h4>
+                <ul className="text-sm text-gray-600 mb-10 space-y-3 flex-1 font-light">
                   {selectedProduct.fullFeatures.map((feat, idx) => (
                     <li key={idx} className="flex items-start">
-                      <span className="text-primary mr-2 mt-0.5">•</span>
+                      <span className="text-[#C4A052] mr-3 font-bodoni">•</span>
                       {feat}
                     </li>
                   ))}
@@ -187,7 +195,7 @@ export default function Products() {
 
                 <button
                   onClick={handleInquire}
-                  className="w-full py-4 bg-navy text-white hover:bg-navy-light transition-colors rounded shadow-md font-bold tracking-wide uppercase text-sm"
+                  className="w-full py-4 bg-transparent border border-[#C4A052] text-[#C4A052] hover:bg-[#C4A052] hover:text-white transition-all font-bodoni text-xl italic tracking-[0.1em] cursor-pointer"
                 >
                   Inquire to Order
                 </button>
