@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <Image src={logo} alt="MARA Singhe Logo" height={140} className="object-contain mb-8" />
+            <Image src={logo} alt="MARA සිංහ Logo" height={140} className="object-contain mb-8" />
             <p className="text-sm opacity-80">Premium Fragrances & Cosmetics crafted for elegance and wellbeing.</p>
           </div>
           <div>
@@ -37,7 +37,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-ivory/20 mt-12 pt-8 text-center text-sm opacity-60">
-          <p>&copy; 2026 MARA Singhe Premium Fragrances & Cosmetics. All Rights Reserved.</p>
+          <p>&copy; 2026 MARA සිංහ Premium Fragrances & Cosmetics. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

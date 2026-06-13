@@ -12,7 +12,7 @@ export default function Contact() {
             <div className="space-y-8">
               <div>
                 <h4 className="font-bold text-navy mb-2">Business</h4>
-                <p className="text-gray-600">MARA Singhe Premium Fragrances & Cosmetics</p>
+                <p className="text-gray-600">MARA සිංහ Premium Fragrances & Cosmetics</p>
               </div>
               <div>
                 <h4 className="font-bold text-navy mb-2">Website</h4>

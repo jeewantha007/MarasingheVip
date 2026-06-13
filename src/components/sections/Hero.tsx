@@ -102,7 +102,7 @@ export default function Hero() {
             className="px-4"
           >
             <p className="text-gray-500 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-light tracking-wide text-center">
-              Explore the MARA Singhe journey, featuring premium aromatic fragrances and cosmetic items crafted with uncompromising quality.
+              Explore the MARA සිංහ journey, featuring premium aromatic fragrances and cosmetic items crafted with uncompromising quality.
             </p>
           </motion.div>
         </div>
@@ -121,7 +121,7 @@ export default function Hero() {
               >
                 <Image
                   src={images[active]}
-                  alt="MARA Singhe Product Range"
+                  alt="MARA සිංහ Product Range"
                   className="w-[120%] sm:w-full max-w-none sm:max-w-full h-auto object-contain drop-shadow-2xl scale-110 sm:scale-125 transition-transform duration-700"
                   priority
                 />

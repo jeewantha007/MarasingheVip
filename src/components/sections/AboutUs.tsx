@@ -46,25 +46,25 @@ export default function AboutUs() {
           {/* Text Content - Right Side */}
           <div className="w-full md:w-7/12 flex flex-col gap-5 text-[16.5px]">
             <p className="text-gray-500 leading-[1.8] font-light">
-              MARA Singhe Premium Fragrances & Cosmetics is a proudly Sri Lankan brand founded by M.M. Mahesh Marasinghe, driven by a vision to create premium-quality products that combine tradition, craftsmanship, and exceptional wellness experiences.
+              MARA සිංහ Premium Fragrances & Cosmetics is a proudly Sri Lankan brand founded by M.M. Mahesh Marasinghe, driven by a vision to create premium-quality products that combine tradition, craftsmanship, and exceptional wellness experiences.
             </p>
             <p className="text-gray-500 leading-[1.8] font-light">
-              As a growing business in the beauty and fragrance industry, MARA Singhe is dedicated to producing high-quality items that bring peace, positivity, and elegance into homes and everyday life. Every product is carefully crafted using selected ingredients and refined blends to deliver a rich and long-lasting experience.
+              As a growing business in the beauty and fragrance industry, MARA සිංහ is dedicated to producing high-quality items that bring peace, positivity, and elegance into homes and everyday life. Every product is carefully crafted using selected ingredients and refined blends to deliver a rich and long-lasting experience.
             </p>
             <p className="text-gray-500 leading-[1.8] font-light">
-              Our journey began with a simple commitment: to offer fragrances and cosmetics that stand apart through quality, consistency, and attention to detail. From ingredient selection to product packaging, every aspect of MARA Singhe reflects our passion for excellence and our desire to create products that customers can trust.
+              Our journey began with a simple commitment: to offer fragrances and cosmetics that stand apart through quality, consistency, and attention to detail. From ingredient selection to product packaging, every aspect of MARA සිංහ reflects our passion for excellence and our desire to create products that customers can trust.
             </p>
             <p className="text-gray-500 leading-[1.8] font-light">
-              The MARA Singhe collection features distinctive fragrances and nourishing cosmetics, each designed to create a unique atmosphere of relaxation, beauty, and wellbeing.
+              The MARA සිංහ collection features distinctive fragrances and nourishing cosmetics, each designed to create a unique atmosphere of relaxation, beauty, and wellbeing.
             </p>
             <p className="text-gray-500 leading-[1.8] font-light">
-              At MARA Singhe, we believe that fragrance and self-care have the power to transform moments, elevate moods, and create meaningful experiences. Our mission is to become a trusted name in premium cosmetics by continuously delivering quality, innovation, and customer satisfaction.
+              At MARA සිංහ, we believe that fragrance and self-care have the power to transform moments, elevate moods, and create meaningful experiences. Our mission is to become a trusted name in premium cosmetics by continuously delivering quality, innovation, and customer satisfaction.
             </p>
             <p className="text-gray-500 leading-[1.8] font-light">
               As we continue to grow, we remain committed to preserving timeless traditions while introducing modern standards of quality and presentation that reflect the values of our brand.
             </p>
             <p className="text-[#C4A052] font-semibold italic mt-2 text-lg">
-              MARA Singhe Premium Fragrances & Cosmetics — Crafted for Elegance, Inspired by Tradition.
+              MARA සිංහ Premium Fragrances & Cosmetics — Crafted for Elegance, Inspired by Tradition.
             </p>
           </div>
 

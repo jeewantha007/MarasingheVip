@@ -14,8 +14,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MARA Singhe | Premium Fragrances & Cosmetics",
-  description: "Experience the art of premium fragrance and cosmetic items with MARA Singhe's luxury collection.",
+  title: "MARA සිංහ | Premium Fragrances & Cosmetics",
+  description: "Experience the art of premium fragrance and cosmetic items with MARA සිංහ's luxury collection.",
   keywords: ["fragrance", "cosmetics", "premium cosmetics", "Sri Lanka", "aromatherapy", "luxury beauty"],
 };
 
