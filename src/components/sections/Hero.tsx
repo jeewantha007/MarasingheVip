@@ -91,7 +91,7 @@ export default function Hero() {
             className="mb-2 sm:mb-4"
           >
             <h1 className="font-poppins font-bold text-[#1A1A1A] tracking-[0.15em] sm:tracking-[0.3em] uppercase leading-none text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.2rem]">
-              ESSENTIALS
+              MARA සිංහ VIP
             </h1>
           </motion.div>
 
