@@ -1,9 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import { motion, Variants } from "framer-motion";
 import { Mail, Phone, Globe, MapPin } from "lucide-react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const text = `*New Inquiry from MARA සිංහ VIP Website*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*Message:* ${formData.message}`;
+    window.open(`https://wa.me/94760093140?text=${text}`, "_blank");
+  };
+
   const staggerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -121,13 +130,16 @@ export default function Contact() {
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
               className="bg-[#FAF7F0] border border-[#C4A052]/20 p-6 sm:p-8 md:p-12 rounded-xl shadow-[0_20px_60px_rgba(18,18,69,0.12)] relative z-10 w-full max-w-[100vw] overflow-hidden"
             >
-              <form className="space-y-8 md:space-y-10">
+              <form onSubmit={handleSubmit} className="space-y-8 md:space-y-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
                   <div className="relative">
                     <label htmlFor="name" className="block font-bodoni text-[10px] md:text-xs font-semibold text-[#C4A052] uppercase tracking-[0.2em] mb-2">Full Name</label>
                     <input 
                       type="text" 
                       id="name" 
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({...formData, name: e.target.value})}
                       className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#C4A052]/30 text-navy focus:outline-none focus:ring-0 focus:border-[#C4A052] transition-colors placeholder-gray-400/70"
                       placeholder="John Doe"
                     />
@@ -137,6 +149,9 @@ export default function Contact() {
                     <input 
                       type="tel" 
                       id="phone" 
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({...formData, phone: e.target.value})}
                       className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#C4A052]/30 text-navy focus:outline-none focus:ring-0 focus:border-[#C4A052] transition-colors placeholder-gray-400/70"
                       placeholder="076 009 3140"
                     />
@@ -147,6 +162,8 @@ export default function Contact() {
                   <input 
                     type="email" 
                     id="email" 
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
                     className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#C4A052]/30 text-navy focus:outline-none focus:ring-0 focus:border-[#C4A052] transition-colors placeholder-gray-400/70"
                     placeholder="john@example.com"
                   />
@@ -156,12 +173,15 @@ export default function Contact() {
                   <textarea 
                     id="message" 
                     rows={3}
+                    required
+                    value={formData.message}
+                    onChange={(e) => setFormData({...formData, message: e.target.value})}
                     className="w-full px-0 py-2 bg-transparent border-0 border-b border-[#C4A052]/30 text-navy focus:outline-none focus:ring-0 focus:border-[#C4A052] transition-colors resize-none placeholder-gray-400/70"
                     placeholder="How can we assist you today?"
                   ></textarea>
                 </div>
                 <button 
-                  type="button" 
+                  type="submit" 
                   className="w-full py-4 sm:py-5 bg-transparent border border-[#C4A052] text-[#C4A052] font-bodoni text-lg sm:text-xl italic tracking-[0.1em] hover:bg-[#C4A052] hover:text-white transition-all duration-500 mt-6 group flex items-center justify-center gap-3 cursor-pointer"
                 >
                   Send Inquiry
