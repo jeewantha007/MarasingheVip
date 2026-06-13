@@ -6,13 +6,13 @@ export default function Contact() {
           <div>
             <h2 className="font-bodoni text-4xl md:text-5xl font-bold text-text-dark mb-6">Get in Touch</h2>
             <p className="text-gray-600 mb-12 text-lg">
-              We would love to hear from you. For any inquiries regarding our premium incense collection, please reach out to us.
+              We would love to hear from you. For any inquiries regarding our premium fragrances and cosmetics collection, please reach out to us.
             </p>
             
             <div className="space-y-8">
               <div>
                 <h4 className="font-bold text-navy mb-2">Business</h4>
-                <p className="text-gray-600">MARA Singhe Premium Incense</p>
+                <p className="text-gray-600">MARA Singhe Premium Fragrances & Cosmetics</p>
               </div>
               <div>
                 <h4 className="font-bold text-navy mb-2">Website</h4>

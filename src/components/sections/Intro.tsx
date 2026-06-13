@@ -17,20 +17,13 @@ export default function Intro() {
         
         {/* Heading */}
         <h2 className="font-bodoni text-3xl md:text-[2.5rem] text-[#4A3B2C] uppercase tracking-[0.15em] mb-12 leading-snug">
-          The Art of Incense <br />
-          Fragrance
+          The Art of Fragrance <br />
+          & Cosmetics
         </h2>
         
         {/* Paragraph */}
         <p className="text-gray-500 text-[15px] md:text-[16px] leading-[1.8] tracking-wide max-w-[850px] mx-auto font-light">
-          Immerse yourself in our world where every drop tells a story. Our meticulously
-          blended incense fragrances transform ordinary moments into extraordinary
-          experiences, gently filling your space with warmth, balance, and serenity. Each
-          incense stick is carefully crafted using quality ingredients to ensure a smooth, long-
-          lasting aroma that soothes the senses. As the fragrant smoke rises, it creates an
-          atmosphere of peace and mindfulness - ideal for enhancing sacred rituals,
-          meditation, prayer, or quiet daily reflections. Let every burn cleanse your space, calm
-          your mind, and reconnect you with moments of inner harmony.
+          Immerse yourself in our world where every drop tells a story. Our meticulously blended fragrances and premium cosmetic products transform ordinary moments into extraordinary experiences. Each product is carefully crafted using quality ingredients to ensure a smooth, long-lasting essence that soothes the senses and elevates your daily routines. Let our premium collection cleanse your space, nourish your skin, and reconnect you with moments of inner harmony.
         </p>
         
       </div>

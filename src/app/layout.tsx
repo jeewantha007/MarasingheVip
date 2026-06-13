@@ -14,9 +14,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "MARA Singhe | Premium Incense Sticks",
-  description: "Experience the art of premium fragrance with MARA Singhe's luxury incense collection.",
-  keywords: ["incense", "premium incense", "Sri Lanka", "fragrance", "aromatherapy"],
+  title: "MARA Singhe | Premium Fragrances & Cosmetics",
+  description: "Experience the art of premium fragrance and cosmetic items with MARA Singhe's luxury collection.",
+  keywords: ["fragrance", "cosmetics", "premium cosmetics", "Sri Lanka", "aromatherapy", "luxury beauty"],
 };
 
 export default function RootLayout({

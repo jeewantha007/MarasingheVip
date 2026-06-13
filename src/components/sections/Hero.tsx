@@ -91,7 +91,7 @@ export default function Hero() {
             className="mb-2 sm:mb-4"
           >
             <h1 className="font-poppins font-bold text-[#1A1A1A] tracking-[0.15em] sm:tracking-[0.3em] uppercase leading-none text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.2rem]">
-              FRAGRANCES
+              ESSENTIALS
             </h1>
           </motion.div>
 
@@ -102,14 +102,13 @@ export default function Hero() {
             className="px-4"
           >
             <p className="text-gray-500 text-xs sm:text-sm md:text-base max-w-2xl mx-auto leading-relaxed font-light tracking-wide text-center">
-              Explore the first chapter of the MARA Singhe journey, featuring premium
-              aromatic products crafted with exceptional fragrances and uncompromising quality.
+              Explore the MARA Singhe journey, featuring premium aromatic fragrances and cosmetic items crafted with uncompromising quality.
             </p>
           </motion.div>
         </div>
 
         {/* Image + CTA */}
-        <div className="relative w-full max-w-[1400px] mx-auto flex flex-col items-center justify-center mt-2 sm:mt-4 md:mt-6 flex-1 min-h-[45vh] sm:min-h-[55vh] md:min-h-[75vh]">
+        <div className="relative w-full max-w-[1400px] mx-auto flex flex-col items-center justify-center mt-2 sm:mt-4 md:mt-6 h-[45vh] sm:h-[55vh] md:h-[65vh]">
           <div className="w-full relative flex justify-center items-center h-full">
             <AnimatePresence mode="wait">
               <motion.div
