@@ -22,7 +22,7 @@ export default function Navbar() {
     <div className="fixed w-full z-50 transition-all duration-300">
       {/* Top Bar with smooth hide animation */}
       <div 
-        className={`bg-navy text-ivory text-sm hidden md:block overflow-hidden transition-all duration-500 ease-in-out ${
+        className={`bg-navy border-b border-[#C4A052]/30 text-ivory text-xs uppercase tracking-widest font-bodoni hidden md:block overflow-hidden transition-all duration-500 ease-in-out ${
           isScrolled ? "max-h-0 opacity-0" : "max-h-16 opacity-100"
         }`}
       >
@@ -44,7 +44,7 @@ export default function Navbar() {
       </div>
 
       {/* Main Navbar */}
-      <header className="w-full bg-white/95 backdrop-blur-md shadow-md border-b border-gray-200 relative">
+      <header className="w-full bg-[#FAF7F0]/95 backdrop-blur-md shadow-sm border-b-[2px] border-[#C4A052]/40 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20 relative">
             {/* Break-out Circular Logo Area */}
@@ -57,10 +57,10 @@ export default function Navbar() {
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-10">
-              <a href="#home" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Home</a>
-              <a href="#about" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">About Us</a>
-              <a href="#products" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Products</a>
-              <a href="#contact" className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase">Contact</a>
+              <a href="#home" className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">Home</a>
+              <a href="#about" className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">About Us</a>
+              <a href="#products" className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">Products</a>
+              <a href="#contact" className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase">Contact</a>
             </nav>
 
             {/* Mobile Menu Button */}
@@ -78,15 +78,15 @@ export default function Navbar() {
 
         {/* Mobile Navigation Dropdown */}
         <div 
-          className={`md:hidden absolute w-full bg-white shadow-lg transition-all duration-300 ease-in-out border-t border-gray-100 ${
-            isMobileMenuOpen ? "max-h-64 opacity-100 py-4" : "max-h-0 opacity-0 overflow-hidden py-0 border-t-0"
+          className={`md:hidden absolute w-full bg-[#FAF7F0] shadow-lg transition-all duration-300 ease-in-out border-t-2 border-[#C4A052]/30 ${
+            isMobileMenuOpen ? "max-h-64 opacity-100 py-6" : "max-h-0 opacity-0 overflow-hidden py-0 border-t-0"
           }`}
         >
-          <nav className="flex flex-col space-y-4 px-6">
-            <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Home</a>
-            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">About Us</a>
-            <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Products</a>
-            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="text-gray-900 font-semibold tracking-wide hover:text-primary transition-colors text-base uppercase block">Contact</a>
+          <nav className="flex flex-col space-y-6 px-8">
+            <a href="#home" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Home</a>
+            <a href="#about" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">About Us</a>
+            <a href="#products" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Products</a>
+            <a href="#contact" onClick={() => setIsMobileMenuOpen(false)} className="font-bodoni text-navy font-bold tracking-[0.15em] hover:text-[#C4A052] transition-colors text-sm uppercase block">Contact</a>
           </nav>
         </div>
       </header>

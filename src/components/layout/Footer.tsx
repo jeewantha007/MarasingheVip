@@ -3,8 +3,8 @@ import logo from "../../app/assets/logo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-navy border-t border-white/10 relative text-ivory py-8 md:py-10">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#C4A052]/50 to-transparent"></div>
+    <footer className="bg-navy border-t-[3px] border-[#C4A052] relative text-ivory py-12 md:py-16">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-[#FAF7F0]/20 to-transparent mt-1"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-6">
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
@@ -12,16 +12,16 @@ export default function Footer() {
             <p className="text-xs md:text-sm opacity-80 leading-relaxed">Premium Fragrances & Cosmetics crafted for elegance and wellbeing.</p>
           </div>
           <div className="text-center sm:text-left">
-            <h4 className="font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm opacity-80">
-              <li><a href="#home" className="hover:text-primary">Home</a></li>
-              <li><a href="#products" className="hover:text-primary">Products</a></li>
-              <li><a href="#about" className="hover:text-primary">About Us</a></li>
-              <li><a href="#contact" className="hover:text-primary">Contact</a></li>
+            <h4 className="font-bodoni font-bold text-xl mb-4 tracking-widest text-[#C4A052] uppercase">Quick Links</h4>
+            <ul className="space-y-3 text-sm opacity-80 font-light">
+              <li><a href="#home" className="hover:text-[#C4A052] transition-colors">Home</a></li>
+              <li><a href="#products" className="hover:text-[#C4A052] transition-colors">Products</a></li>
+              <li><a href="#about" className="hover:text-[#C4A052] transition-colors">About Us</a></li>
+              <li><a href="#contact" className="hover:text-[#C4A052] transition-colors">Contact</a></li>
             </ul>
           </div>
           <div className="text-center sm:text-left">
-            <h4 className="font-bold mb-3 md:mb-4 tracking-wide text-[#C4A052]">Contact Info</h4>
+            <h4 className="font-bodoni font-bold text-xl mb-4 tracking-widest text-[#C4A052] uppercase">Contact Info</h4>
             <ul className="space-y-2 text-xs md:text-sm opacity-80">
               <li>info@marasinghevip.lk</li>
               <li>076 009 3140</li>
@@ -29,7 +29,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="text-center sm:text-left flex flex-col items-center sm:items-start">
-            <h4 className="font-bold mb-3 md:mb-4 tracking-wide text-[#C4A052]">Follow Us</h4>
+            <h4 className="font-bodoni font-bold text-xl mb-4 tracking-widest text-[#C4A052] uppercase">Follow Us</h4>
             <div className="flex space-x-4 opacity-90 mt-2">
               <a href="#" aria-label="Facebook" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#C4A052] hover:text-navy transition-all">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
@@ -56,8 +56,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-white/10 mt-8 md:mt-10 pt-6 text-center text-xs opacity-50">
-          <p>&copy; 2026 MARA සිංහ Premium Fragrances & Cosmetics. All Rights Reserved.</p>
+        <div className="border-t border-[#C4A052]/20 mt-10 md:mt-12 pt-8 text-center text-xs opacity-60 font-bodoni uppercase tracking-widest">
+          <p>&copy; 2026 MARA සිංහ Premium Fragrances. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
