@@ -101,7 +101,7 @@ export default function Products() {
           <div className="w-16 h-[2px] bg-[#C4A052] mx-auto mb-14"></div>
         </div>
 
-        <div className="relative h-[650px] w-full flex items-center justify-center overflow-hidden px-4">
+        <div className="relative h-[550px] md:h-[600px] w-full flex items-center justify-center overflow-hidden px-4">
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
@@ -171,7 +171,7 @@ export default function Products() {
                       filter: filter,
                     }}
                     transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
-                    className={`absolute w-[280px] sm:w-[320px] md:w-[360px] rounded-none overflow-hidden border border-[#C4A052]/20 bg-[#FAF7F0] flex flex-col
+                    className={`absolute w-[300px] sm:w-[360px] md:w-[420px] rounded-none overflow-hidden border border-[#C4A052]/20 bg-[#FAF7F0] flex flex-col
                       ${isCenter ? "shadow-[0_30px_60px_rgba(18,18,69,0.15)]" : "shadow-md cursor-pointer"}
                     `}
                     onClick={() => {
@@ -179,7 +179,7 @@ export default function Products() {
                     }}
                   >
                     {/* ~80% Image Area */}
-                    <div className="h-[350px] bg-white/40 flex flex-col items-center justify-center relative overflow-hidden transition-all duration-500">
+                    <div className="h-[300px] sm:h-[340px] bg-white/40 flex flex-col items-center justify-center relative overflow-hidden transition-all duration-500">
                       {/* Ancient decorative frame inside image */}
                       <div className="absolute inset-3 border border-[#C4A052]/10 rounded-sm pointer-events-none transition-all duration-500"></div>
                       

@@ -83,13 +83,21 @@ export default function WhyChooseUs() {
             <motion.div 
               variants={itemVariants}
               key={idx} 
-              className="bg-white/[0.03] backdrop-blur-sm border border-white/10 p-6 rounded-xl text-center flex flex-col items-center hover:bg-white/[0.05] hover:border-[#C4A052]/30 hover:-translate-y-1 transition-all duration-300"
+              className="bg-navy border-[2px] border-[#C4A052]/30 p-8 rounded-none text-center flex flex-col items-center hover:bg-[#C4A052]/5 hover:border-[#C4A052] hover:-translate-y-1 transition-all duration-500 relative group"
             >
-              <div className="w-14 h-14 bg-[#C4A052]/10 rounded-full flex items-center justify-center mb-5 shadow-[0_0_20px_rgba(196,160,82,0.15)]">
-                {feature.icon}
+              {/* Ancient corner accents */}
+              <div className="absolute top-0 left-0 w-2 h-2 bg-[#C4A052]/50 group-hover:bg-[#C4A052] transition-colors"></div>
+              <div className="absolute top-0 right-0 w-2 h-2 bg-[#C4A052]/50 group-hover:bg-[#C4A052] transition-colors"></div>
+              <div className="absolute bottom-0 left-0 w-2 h-2 bg-[#C4A052]/50 group-hover:bg-[#C4A052] transition-colors"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-2 bg-[#C4A052]/50 group-hover:bg-[#C4A052] transition-colors"></div>
+
+              <div className="w-16 h-16 border border-[#C4A052]/50 rounded-none rotate-45 flex items-center justify-center mb-8 shadow-[0_0_20px_rgba(196,160,82,0.1)] group-hover:rotate-0 transition-transform duration-500 bg-[#FAF7F0]/5">
+                <div className="-rotate-45 group-hover:rotate-0 transition-transform duration-500">
+                  {feature.icon}
+                </div>
               </div>
-              <h3 className="font-bodoni text-lg font-bold mb-3 text-white tracking-wide">{feature.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed font-light">{feature.description}</p>
+              <h3 className="font-bodoni text-xl font-bold mb-4 text-[#C4A052] tracking-wide uppercase">{feature.title}</h3>
+              <p className="text-gray-300 text-sm leading-relaxed font-light italic">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

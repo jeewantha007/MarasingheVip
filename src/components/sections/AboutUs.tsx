@@ -19,21 +19,11 @@ export default function AboutUs() {
 
           {/* Profile Image - Left Side, constrained height */}
           <div className="w-full md:w-5/12 shrink-0 flex flex-col items-center md:items-end">
-            <div className="relative p-3 bg-[#FAF7F0] border-[3px] border-[#C4A052] shadow-[0_20px_40px_rgba(18,18,69,0.15)] group">
-              {/* Ancient decorative frame lines */}
-              <div className="absolute inset-1.5 border border-[#C4A052] opacity-50 pointer-events-none z-10 transition-all duration-700 group-hover:inset-2"></div>
-              <div className="absolute -inset-2 border border-[#C4A052]/30 pointer-events-none z-10"></div>
-              
-              {/* Corner accents for the ancient frame look */}
-              <div className="absolute -top-1 -left-1 w-4 h-4 bg-[#C4A052] pointer-events-none z-20"></div>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#C4A052] pointer-events-none z-20"></div>
-              <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-[#C4A052] pointer-events-none z-20"></div>
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#C4A052] pointer-events-none z-20"></div>
-
+            <div className="relative w-full group">
               <Image
                 src={profileImg}
                 alt="M.M Mahesh Marasinghe"
-                className="w-full aspect-[4/5] object-cover object-top sepia-[0.15] contrast-[1.05] group-hover:sepia-0 transition-all duration-700"
+                className="w-full aspect-[4/5] object-cover object-top shadow-xl rounded-sm sepia-[0.10] contrast-[1.05] group-hover:sepia-0 transition-all duration-700"
                 priority
               />
             </div>
